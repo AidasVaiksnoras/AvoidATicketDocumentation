@@ -1,0 +1,248 @@
+\documentclass{VUMIFPSkursinis}
+\usepackage{algorithmicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{caption}
+\usepackage{color}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{array,makecell}
+\usepackage{enumitem}
+
+% Titulinio aprašas
+\university{Vilniaus universitetas}
+\faculty{Matematikos ir informatikos fakultetas}
+\department{Programų sistemų katedra}
+\papertype{Programų sistemų inžinerija}
+\title{Keleivių kontrolės vengimo programėlė}
+\titleineng{AVOID A TICKET}
+\status{2 kurso 5 grupės studentai}
+\author{Elena Reivytytė}
+\secondauthor{Matas Šilinskas}
+\thirdauthor{Kasparas Taminskas}
+\fourthauthor{Aidas Vaikšnoras}
+\fifthauthor{Tadas Žaliauskas}
+\supervisor{dr. Vytautas Valaitis}
+\date{Vilnius – \the\year}
+
+% Nustatymai
+% \setmainfont{Palemonas}   % Pakeisti teksto šriftą į Palemonas (turi būti įdiegtas sistemoje)
+\bibliography{bibliografija}
+
+\begin{document}
+\maketitle
+
+\sectionnonum{Anotacija}
+
+\tableofcontents
+
+\sectionnonum{Žodynas}
+\begin{enumerate}
+	\item Aplikacija - tai programėlė leidžianti naudotis aprašytomis funkcijomis.
+	\item Naudotojas - tai bendrinis aplikacijos profilis.
+	\item Žaidimas - stalo žaidimo įvykis. (Game)
+	\item Vartotojas - galutinis aplikacijos vartotojas, galintis sukurti ar prisijungti prie egzistuojančio žaidimo. (User)
+	\item Administratorius - tai žmogus kuris prižiūri korektišką aplikacijos veikimą, turi priėjimą prie statistinės informacijos.
+	\item Kompanija - verslo subjektas, galintis aplikacijoje sukurti specialus renginius savo atstovaujamiems žaidimams.
+	\item Draugas - tai vartotojas esantis draugų saraše, kuriam galima parašyti žinutę arba pakviesti žaisti konkretų žaidimą. (Friend)
+	\item Perspektyva - (Point of view) aplikacijos naudojimo kampas priklausantis nuo naudotojo tipo.
+\end{enumerate} 
+
+\section{Įvadas}
+
+\subsection{Programų sistemos pavadinimas}
+\subsection{Dalykinė sritis}
+\subsection{Probleminė sritis}
+Programėlė yra skirta padėti klientams sutrumpinti kelionių laiką parodant, kuriose vietose keleivių kontrolė tikrina autobusus.
+\subsection{Vartotojas}
+Klientas - bet kokio amžiaus žmogus, kuris turi išmanųjį telefoną ir naudojasi miestinių autobusų teikiamomis paslaugomis.
+\subsection{Darbo pagrindas}
+
+\textbf{Darbo pasiskirstymas}\\
+\begin{tabular}{lr}
+   Elena Reivytytė & 20\% \\
+   Aidas Vaikšnoras & 20\% \\
+   Kasparas Taminskas & 20\% \\
+   Tadas Žaliauskas & 20\% \\
+   Matas Šilinskas & 20\% \\
+\end{tabular}
+
+\section{Poreikiai}
+\begin{enumerate}
+	\item Vartotojas gali prisijungti, atsijungti ir registruotis prie programėlės.
+	\item Vartotojas turi galimybė prisijungti naudojantis “Facebook”.
+	\item Vartotojas gali keisti registracijos metu įvestus duomenis: vardą, pavardę, el. paštą, slaptažodį, prisijungimo vardą.
+	\item Administratorius gali keisti kiekvieno vartojo vardą, pavardę, el. paštą, slaptažodį, prisijungimo vardą.
+	\item Administratorius gali pridėti naują vartotoją ir administratorių.
+	\item Vartotojas gali pridėti žymeklį, nurodantį vietą, kurioje yra kontrolė netoliese nuo jo esančiu atstumu.
+	\item Vartotojas gali matyti kitų vartotojų žymeklius, sudėtus žemėlapyje.
+	\item Padėti žymekliai rodomi tik tam tikrą laiko tarpą.
+	\item Vartotojas gali balsuoti ar žymeklis yra klaidingas ar ne.
+	\item Vartotojas gali palikti komentarą prie žymeklio.
+	\item Administratorius gali ištrinti visus žymeklius.
+	\item Vartotojas gali perskaityti D.U.K. programėlėje.
+	\item Vartotojas gali užduoti klausimą.
+	\item Programėle turi būti anglų kalba. 
+	\item Išjungus programėlę, vartotojas liekas prisijungęs.
+\end{enumerate} 
+
+\section{Reikalavimai}
+\subsection{Funkciniai reikalavimai }
+Šiame skyriuje pateikiami sistemos funkciniai reikalavimai, t.y. pagrindinės sistemos atliekamos funkcijos, konkretūs jų aprašymai.
+
+\newcounter{frcount}
+\newcommand\rownumberfr{\stepcounter{frcount}\arabic{frcount}}
+
+\begin{longtable}{ | >{\centering}m{2cm} | m{10cm} | >{\centering}m{2.5cm} | } \caption{Funkciniai reikalavimai.} \endhead \hline
+\multicolumn{3}{ |l| }{\textbf{Funkciniai reikalavimai:}} \tabularnewline \hline
+\textbf{Numeris} & \centering{\textbf{Reikalavimas}} & \textbf{Svarba} \tabularnewline \hline
+
+FR\rownumberfr & Įsijungęs programėlę, vartotojas gali:
+						\begin{enumerate}
+							\item registruotis
+							\item prisijungti
+							\item neteisingai įvedęs duomenis, vartotojas gali pasitaisyti
+						\end{enumerate}
+				\textit{Žr. skyrius poreikiai, 1 punktas} & Būtina\tabularnewline \hline
+
+FR\rownumberfr & Prisijungęs vartotojas gali atsijungti.\newline \textit{Žr. skyrius poreikiai, 1 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Vartotojas gali prisijungti naudodamas “Facebook” paskyrą.\newline \textit{Žr. skyrius poreikiai, 2 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Savo paskyroje vartotojas gali keisti:
+						\begin{enumerate}
+							\item slaptažodį
+							\item vardą
+							\item pavardę
+							\item prisijungimo vardą
+							\item el. paštą
+						\end{enumerate}
+				\textit{Žr. skyrius poreikiai, 3 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Administratorius gali pakeisti bet kurio vartotojo:
+						\begin{enumerate}
+							\item slaptažodį
+							\item vardą
+							\item pavardę
+							\item prisijungimo vardą
+							\item el. paštą
+						\end{enumerate}
+				\textit{Žr. skyrius poreikiai, 4 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Administratorius gali pridėti naują vartotoją arba administratorių.\newline \textit{Žr. skyrius poreikiai, 5 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Vartotojas gali pridėti žymeklį, nurodantį vietą, kurioje yra kontrolė netoliese nuo jo esančiu atstumu.
+				 \newline \textit{Žr. skyrius poreikiai, 6 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Vartotojas gali peržiūrėti kitų vartototojų padėtus žymeklius.\newline \textit{Žr. skyrius poreikiai, 7 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Padėti žymekliai rodomi 1h 30min skaičiuojant nuo padėjimo laiko, o vėliau yra automatiškai ištrinami.\newline \textit{Žr. skyrius poreikiai, 8 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Vartotojas gali balsuoti ar žymeklis yra klaidingas ar ne.\newline \textit{Žr. skyrius poreikiai, 9 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Vartotojas gali palikti komentarą prie žymeklio.\newline \textit{Žr. skyrius poreikiai, 10 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Administratorius gali ištrinti visus žymeklius.\newline \textit{Žr. skyrius poreikiai, 11 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Vartotojas gali perskaityti D.U.K. pačioje programėlėje.\newline \textit{Žr. skyrius poreikiai, 12 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Vartotojas gali užduoti klausimą pačioje programėlėje.\newline \textit{Žr. skyrius poreikiai, 13 punktas} & Būtina\tabularnewline \hline
+\end{longtable}
+
+\subsection{Nefunkciniai reikalavimai}
+Šiame skyriuje pateikiami nefunkciniai reikalavimai sistemoms, t.y. reikalavimai, tiesiogiai nesusiję su sistemos atliekamomis funkcijomis.
+
+\newcounter{nfrcount}
+\newcommand\rownumber{\stepcounter{nfrcount}\arabic{nfrcount}}
+
+\subsubsection{OS reikalavimai}
+\begin{longtable}{ | >{\centering}m{2cm} | m{10cm} | >{\centering}m{2.5cm} | } \caption{Nefunkciniai OS reikalavimai} \endhead \hline
+\multicolumn{3}{ |l| }{\textbf{OS reikalavimai:}} \tabularnewline \hline
+\textbf{Numeris} & \centering{\textbf{Reikalavimas}} & \textbf{Svarba} \tabularnewline \hline
+NFR\rownumber & Programėlė turi būti palaikoma Android (nuo 4.0 versijos) įrenginiuose & Būtina\tabularnewline \hline
+NFR\rownumber & Programėlė palaikoma iOS (nuo 8.0 versijos) įrenginiuose. & Pageidautinas\tabularnewline \hline
+NFR\rownumber & Aplikacija turi būti pasiekiama ir be išmanaus telefono - per naršyklę & Būtina\tabularnewline \hline
+NFR\rownumber & Išmanusis renginys turi turėti GPS modulį. & Būtina\tabularnewline \hline
+NFR\rownumber & Išmanusis įrenginys turi turėti prieigą prie interneto & Būtina\tabularnewline \hline
+\end{longtable}
+
+\subsubsection{Saveikos su  kitomis programomis reikalavimai}
+\begin{longtable}{ | >{\centering}m{2cm} | m{10cm} | >{\centering}m{2.5cm} | } \caption{Nefunkciniai saveikos su  kitomis programomis reikalavimai} \endhead \hline
+\multicolumn{3}{ |l| }{\textbf{Saveikos su  kitomis programomis reikalavimai:}} \tabularnewline \hline
+\textbf{Numeris} & \centering{\textbf{Reikalavimas}} & \textbf{Svarba} \tabularnewline \hline
+NFR\rownumber & Facebook ir Google api vartotojo autorizacijai & Būtina\tabularnewline \hline
+NFR\rownumber & Aplikacija reikalauja GPS prieigos teisių. & Būtina\tabularnewline \hline
+NFR\rownumber & Aplikacija reikalauja priegos prie mobiliojo interneto, jei neprisijungta prie Wi-Fi. & Būtina\tabularnewline \hline
+NFR\rownumber & Google api žaidimo vietos nustatymui. & Būtina\tabularnewline \hline
+\end{longtable}
+
+\subsubsection{Programavimo aplinkos reikalavimai}
+\begin{longtable}{ | >{\centering}m{2cm} | m{10cm} | >{\centering}m{2.5cm} | } \caption{Nefunkciniai programavimo aplinkos reikalavimai} \endhead \hline
+\multicolumn{3}{ |l| }{\textbf{Programavimo aplinkos reikalavimai:}} \tabularnewline \hline
+\textbf{Numeris} & \centering{\textbf{Reikalavimas}} & \textbf{Svarba} \tabularnewline \hline
+NFR\rownumber & Programėlė kuriama C\# programavimo kalba. & Būtina\tabularnewline \hline
+NFR\rownumber & Kodo versijavimui ir dalinimuisi naudojama Github repozitorija. & Būtina\tabularnewline \hline
+\end{longtable}
+
+\subsubsection{Tikslumo reikalavimai}
+\begin{longtable}{ | >{\centering}m{2cm} | m{10cm} | >{\centering}m{2.5cm} | } \caption{Nefunkciniai tikslumo reikalavimai duomenų saugojimui} \endhead \hline
+\multicolumn{3}{ |l| }{\textbf{Tikslumo reikalavimai duomenų saugojimui:}} \tabularnewline \hline
+\textbf{Numeris} & \centering{\textbf{Reikalavimas}} & \textbf{Svarba} \tabularnewline \hline
+NFR\rownumber & Vartotojo informacijai skiriama:
+						\begin{enumerate}
+							\item vardui, pavardei ir prisijungimo vardui - 15 simbolių
+							\item slaptažodžiui - 20 simbolių
+							\item el. paštui - 60 simbolių
+						\end{enumerate}
+			  & Būtina\tabularnewline \hline
+NFR\rownumber & Vartotojo prisijungimo vardas ir slaptažodis turi susidaryti bent iš 5 simbolių. & Būtina\tabularnewline \hline
+NFR\rownumber & Kiekvieno vartotojo slaptažodis privalo turėti bent vieną didžiąją raidę ir bent vieną skaičių. & Būtina\tabularnewline \hline
+NFR\rownumber & Vartotojo prisijungimo vardas turi būti unikalus. & Būtina\tabularnewline \hline
+NFR\rownumber & Programėlėje esantis tekstas rašomas anglų kalba. \newline \textit{Žr. skyrius poreikiai, 14 punktas} & Būtina\tabularnewline \hline
+\end{longtable}
+
+\subsubsection{Aptarnavimo ir priežiūros reikalavimai}
+\begin{longtable}{ | >{\centering}m{2cm} | m{10cm} | >{\centering}m{2.5cm} | } \caption{Nefunkciniai aptarnavimo ir priežiūros reikalavimai} \endhead \hline
+\multicolumn{3}{ |l| }{\textbf{Aptarnavimo ir priežiūros reikalavimai:}} \tabularnewline \hline
+\textbf{Numeris} & \centering{\textbf{Reikalavimas}} & \textbf{Svarba} \tabularnewline \hline
+NFR\rownumber & Į vartotojo užduodamus klausimus darbo metu turi būti atsakyta ne vėliau nei per valandą, o ne darbo metu ne vėliau nei per 12 valandų. & Pageidautina\tabularnewline \hline
+NFR\rownumber & Praplėtus sistemos funkcionalumą, būtina testuoti atnaujinimus, kad būtų užtikrinta programėlės sklandi veikla, prieš leidžiant jais naudotis registruotiems vartotojams, svečiams ir administratoriui. & Būtina\tabularnewline \hline
+NFR\rownumber & Testai turi padengti 80\% kodo. & Būtina\tabularnewline \hline
+NFR\rownumber & Programėlę galima atsinaujinti per Google Play. & Būtina\tabularnewline \hline
+\end{longtable}
+
+\subsubsection{Dalykinės srities metaforų reikalavimai}
+\begin{longtable}{ | >{\centering}m{2cm} | m{10cm} | >{\centering}m{2.5cm} | } \caption{Nefunkciniai dalykinės srities metaforų reikalavimai} \endhead \hline
+\multicolumn{3}{ |l| }{\textbf{Dalykinės srities metaforų reikalavimai:}} \tabularnewline \hline
+\textbf{Numeris} & \centering{\textbf{Reikalavimas}} & \textbf{Svarba} \tabularnewline \hline
+NFR\rownumber & Žymeklių duomenys (koordinates ir padėjimo laikas) saugomi duomenų bazėje. & Būtina\tabularnewline \hline
+NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & Būtina\tabularnewline \hline
+\end{longtable}
+			
+\subsection{Rezultatai}
+Šioje dalyje pristatyta mobiliosios stalo žaidimų programėlės Board Games 4+1 architektūra ir
+modelis, kurį sudaro loginis, kūrimo, fizinis, procesų ir užduočių pjūviai, atskleidžiantys detalų
+ir konkretų projektuojamos sistemos vaizdą.
+
+\sectionnonum{Išvada}
+Visos trys projekto dalys, atliktos Programų sistemų inžinerijos kurso metu, leido geriau susipažinti
+su vientisu ir nuosekliu IT projekto kūrimo procesu, pradedant nuo detalios verslo srities analizės,
+į kurią įeina ir rinkos tyrimai, tęsiant reikalavimų specifikacija, kuri nusako aiškius numatomos
+sistemos rėmus ir baigiant aiškiu ir detaliu architektūriniu vaizdu, kurį apibrėžia skirtingi sistemos
+architektūriniai pjūviai. Nuoseklus projekto kūrimo procesas, kurio pagal šio kurso turinį buvo bandoma
+laikytis, leidžia išvengti netikėtumų eigoje, papildomų nenumatytų kaštų, tobulinimo kliūčių ir labai
+tikėtina - greitos sistemos ,,žūties''.
+	
+\sectionnonum{Literatūros sąrašas}
+\begin{itemize}
+	\item Doc. dr. K. Petrausko Programų Sistemų Inžinerijos kurso konspektai
+    \item A. Abran, J. W. Moore, P.Bourque, R. Dupuis, L. L. Tripp - ,,Guide to the Software Engineering Body of Knowledge''
+	\item UML dokumentacija \url{https://www.tutorialspoint.com/uml/uml_2_overview.htm}
+	\item OMG UML v.2.5 Dokumentacija diagramoms, žymėjimui
+	\item Informacija apie išdėstymo tinkle (Deployment) diagramas, pavyzdžiai \url{http://www.uml-diagrams.org/deployment-diagrams-overview.html} 
+	\item https://osp.stat.gov.lt/statistiniu-rodikliu-analize?theme=all\#/
+	\item https://www.androidauthority.com/publishing-first-app-play-store-need-know-383572/
+	\item https://www.serveriai.lt/
+	\item https://www.ovh.com/us/dedicated-servers/
+	\item https://adwords.google.com/ko/KeywordPlanner/
+	\item https://www.webpagefx.com/SEO-Pricing.html
+\end{itemize}
+
+		
+\end{document}
