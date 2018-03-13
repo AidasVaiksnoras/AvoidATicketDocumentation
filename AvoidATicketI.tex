@@ -44,29 +44,20 @@
 
 \tableofcontents
 
-\sectionnonum{Žodynas}
-\begin{enumerate}
-	\item Aplikacija - tai programėlė leidžianti naudotis aprašytomis funkcijomis.
-	\item Naudotojas - tai bendrinis aplikacijos profilis.
-	\item Žaidimas - stalo žaidimo įvykis. (Game)
-	\item Vartotojas - galutinis aplikacijos vartotojas, galintis sukurti ar prisijungti prie egzistuojančio žaidimo. (User)
-	\item Administratorius - tai žmogus kuris prižiūri korektišką aplikacijos veikimą, turi priėjimą prie statistinės informacijos.
-	\item Kompanija - verslo subjektas, galintis aplikacijoje sukurti specialus renginius savo atstovaujamiems žaidimams.
-	\item Draugas - tai vartotojas esantis draugų saraše, kuriam galima parašyti žinutę arba pakviesti žaisti konkretų žaidimą. (Friend)
-	\item Perspektyva - (Point of view) aplikacijos naudojimo kampas priklausantis nuo naudotojo tipo.
-\end{enumerate} 
-
 \section{Įvadas}
 
 \subsection{Programų sistemos pavadinimas}
+Programėlės pavadinimas AvoidATicket išvertus iš anglų kalbos reiškia „Nepirk bilieto be reikalo“
 \subsection{Dalykinė sritis}
+Programėle, kurioje viešojo transporto keleiviai gali dalintis informacija apie vykdomas viešojo transporto bilietų patikras.
 \subsection{Probleminė sritis}
 Programėlė yra skirta padėti klientams sutrumpinti kelionių laiką parodant, kuriose vietose keleivių kontrolė tikrina autobusus.
 \subsection{Vartotojas}
 Klientas - bet kokio amžiaus žmogus, kuris turi išmanųjį telefoną ir naudojasi miestinių autobusų teikiamomis paslaugomis.
 \subsection{Darbo pagrindas}
+Tikslas ištirti rinką galimam programėlės vystymui. Taip pat programėlės projektavimas teoriniame lygmeny siekiant supaprastint programavimo darbus.
 
-\textbf{Darbo pasiskirstymas}\\
+\subsection{Darbo pagrindas}
 \begin{tabular}{lr}
    Elena Reivytytė & 20\% \\
    Aidas Vaikšnoras & 20\% \\
@@ -78,19 +69,20 @@ Klientas - bet kokio amžiaus žmogus, kuris turi išmanųjį telefoną ir naudo
 \section{Poreikiai}
 \begin{enumerate}
 	\item Vartotojas gali prisijungti, atsijungti ir registruotis prie programėlės.
-	\item Vartotojas turi galimybė prisijungti naudojantis “Facebook”.
+	\item Vartotojas turi galimybę prisijungti naudojantis “Facebook” paskyra.
 	\item Vartotojas gali keisti registracijos metu įvestus duomenis: vardą, pavardę, el. paštą, slaptažodį, prisijungimo vardą.
-	\item Administratorius gali keisti kiekvieno vartojo vardą, pavardę, el. paštą, slaptažodį, prisijungimo vardą.
-	\item Administratorius gali pridėti naują vartotoją ir administratorių.
-	\item Vartotojas gali pridėti žymeklį, nurodantį vietą, kurioje yra kontrolė netoliese nuo jo esančiu atstumu.
-	\item Vartotojas gali matyti kitų vartotojų žymeklius, sudėtus žemėlapyje.
-	\item Padėti žymekliai rodomi tik tam tikrą laiko tarpą.
-	\item Vartotojas gali balsuoti ar žymeklis yra klaidingas ar ne.
-	\item Vartotojas gali palikti komentarą prie žymeklio.
-	\item Administratorius gali ištrinti visus žymeklius.
+	\item Vartotojas gali pridėti žymeklį, nurodantį vietą, kurioje yra kontrolė netoliese nuo jo esančiu atstumu (1500 metrų).
+	\item Vartotojas balsuodamas gali patvirtinti arba paneigti, kad žymeklio vietoje stovi keleivių kontrolė.
+	\item Vartotojas gali sekti dominančius transporto maršrutus ir realiu laiku stebėti, kuriose maršruto stotelėse stovi kontrolė. 
+	\item Vartotojas gali peržiūrėti kitų vartotojų padėtus žymeklius. 
+	\item Vartotojas gali palikti komentarą apie žymeklį. 
 	\item Vartotojas gali perskaityti D.U.K. programėlėje.
 	\item Vartotojas gali užduoti klausimą.
+	\item Administratorius gali keisti kiekvieno vartojo vardą, pavardę, el. paštą, slaptažodį, prisijungimo vardą.
+	\item Administratorius gali pridėti naują vartotoją ir administratorių.
 	\item Programėle turi būti anglų kalba. 
+	\item Padėti žymekliai rodomi tik tam tikrą laiko tarpą.
+	\item Administratorius gali ištrinti bet kurį vartotojo pažymėtą žymeklį.
 	\item Išjungus programėlę, vartotojas liekas prisijungęs.
 \end{enumerate} 
 
@@ -124,6 +116,15 @@ FR\rownumberfr & Savo paskyroje vartotojas gali keisti:
 							\item el. paštą
 						\end{enumerate}
 				\textit{Žr. skyrius poreikiai, 3 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Vartotojas gali pridėti žymeklį, nurodantį vietą, kurioje yra kontrolė netoliese nuo jo esančiu atstumu.
+				 \newline \textit{Žr. skyrius poreikiai, 4 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Vartotojas gali balsuoti ar žymeklis yra klaidingas ar ne.\newline \textit{Žr. skyrius poreikiai, 5 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Vartotojas Vartotojas gali sekti dominančius transporto maršrutus ir realiu laiku stebėti, kuriose maršruto stotelėse stovi kontrolė.\newline \textit{Žr. skyrius poreikiai, 6 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Vartotojas gali peržiūrėti kitų vartototojų padėtus žymeklius.\newline \textit{Žr. skyrius poreikiai, 7 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Vartotojas gali palikti komentarą prie žymeklio.\newline \textit{Žr. skyrius poreikiai, 8 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Vartotojas gali perskaityti D.U.K. pačioje programėlėje.\newline \textit{Žr. skyrius poreikiai, 9 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Vartotojas gali užduoti klausimą pačioje programėlėje.\newline \textit{Žr. skyrius poreikiai, 10 punktas} & Būtina\tabularnewline \hline
+
 FR\rownumberfr & Administratorius gali pakeisti bet kurio vartotojo:
 						\begin{enumerate}
 							\item slaptažodį
@@ -132,17 +133,11 @@ FR\rownumberfr & Administratorius gali pakeisti bet kurio vartotojo:
 							\item prisijungimo vardą
 							\item el. paštą
 						\end{enumerate}
-				\textit{Žr. skyrius poreikiai, 4 punktas} & Būtina\tabularnewline \hline
-FR\rownumberfr & Administratorius gali pridėti naują vartotoją arba administratorių.\newline \textit{Žr. skyrius poreikiai, 5 punktas} & Būtina\tabularnewline \hline
-FR\rownumberfr & Vartotojas gali pridėti žymeklį, nurodantį vietą, kurioje yra kontrolė netoliese nuo jo esančiu atstumu.
-				 \newline \textit{Žr. skyrius poreikiai, 6 punktas} & Būtina\tabularnewline \hline
-FR\rownumberfr & Vartotojas gali peržiūrėti kitų vartototojų padėtus žymeklius.\newline \textit{Žr. skyrius poreikiai, 7 punktas} & Būtina\tabularnewline \hline
-FR\rownumberfr & Padėti žymekliai rodomi 1h 30min skaičiuojant nuo padėjimo laiko, o vėliau yra automatiškai ištrinami.\newline \textit{Žr. skyrius poreikiai, 8 punktas} & Būtina\tabularnewline \hline
-FR\rownumberfr & Vartotojas gali balsuoti ar žymeklis yra klaidingas ar ne.\newline \textit{Žr. skyrius poreikiai, 9 punktas} & Būtina\tabularnewline \hline
-FR\rownumberfr & Vartotojas gali palikti komentarą prie žymeklio.\newline \textit{Žr. skyrius poreikiai, 10 punktas} & Būtina\tabularnewline \hline
-FR\rownumberfr & Administratorius gali ištrinti visus žymeklius.\newline \textit{Žr. skyrius poreikiai, 11 punktas} & Būtina\tabularnewline \hline
-FR\rownumberfr & Vartotojas gali perskaityti D.U.K. pačioje programėlėje.\newline \textit{Žr. skyrius poreikiai, 12 punktas} & Būtina\tabularnewline \hline
-FR\rownumberfr & Vartotojas gali užduoti klausimą pačioje programėlėje.\newline \textit{Žr. skyrius poreikiai, 13 punktas} & Būtina\tabularnewline \hline
+				\textit{Žr. skyrius poreikiai, 11 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Administratorius gali pridėti naują vartotoją arba administratorių.\newline \textit{Žr. skyrius poreikiai, 12 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Padėti žymekliai rodomi 1h 30min skaičiuojant nuo padėjimo laiko, o vėliau yra automatiškai ištrinami.\newline \textit{Žr. skyrius poreikiai, 14 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Administratorius gali ištrinti visus žymeklius.\newline \textit{Žr. skyrius poreikiai, 15 punktas} & Būtina\tabularnewline \hline
+FR\rownumberfr & Išjungus programėlę, vartotojas liekas prisijungęs.\newline \textit{Žr. skyrius poreikiai, 16 punktas} & Būtina\tabularnewline \hline
 \end{longtable}
 
 \subsection{Nefunkciniai reikalavimai}
@@ -194,7 +189,7 @@ NFR\rownumber & Vartotojo informacijai skiriama:
 NFR\rownumber & Vartotojo prisijungimo vardas ir slaptažodis turi susidaryti bent iš 5 simbolių. & Būtina\tabularnewline \hline
 NFR\rownumber & Kiekvieno vartotojo slaptažodis privalo turėti bent vieną didžiąją raidę ir bent vieną skaičių. & Būtina\tabularnewline \hline
 NFR\rownumber & Vartotojo prisijungimo vardas turi būti unikalus. & Būtina\tabularnewline \hline
-NFR\rownumber & Programėlėje esantis tekstas rašomas anglų kalba. \newline \textit{Žr. skyrius poreikiai, 14 punktas} & Būtina\tabularnewline \hline
+NFR\rownumber & Programėlėje esantis tekstas rašomas anglų kalba. \newline \textit{Žr. skyrius poreikiai, 13 punktas} & Būtina\tabularnewline \hline
 \end{longtable}
 
 \subsubsection{Aptarnavimo ir priežiūros reikalavimai}
@@ -214,35 +209,193 @@ NFR\rownumber & Programėlę galima atsinaujinti per Google Play. & Būtina\tabu
 NFR\rownumber & Žymeklių duomenys (koordinates ir padėjimo laikas) saugomi duomenų bazėje. & Būtina\tabularnewline \hline
 NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & Būtina\tabularnewline \hline
 \end{longtable}
-			
-\subsection{Rezultatai}
-Šioje dalyje pristatyta mobiliosios stalo žaidimų programėlės Board Games 4+1 architektūra ir
-modelis, kurį sudaro loginis, kūrimo, fizinis, procesų ir užduočių pjūviai, atskleidžiantys detalų
-ir konkretų projektuojamos sistemos vaizdą.
+
+\section{Statinė programų sistemos struktūra}	
+\subsection{Esybių diagrama}
+
+\subsection{Žodynas}
+				\renewcommand{\labelitemi}{$\bullet$}
+				\begin{itemize}
+					\item \textit{Vartotojas} - klientas, prisiregistravęs prie aplikacijos.
+					\item \textit{Neprisijungęs vartotojas} - vartotojas, kuris nėra atlikęs prisijungimo procedūros programėlėje ir neturi galiojančios prisijungimo sesijos.
+					\item \textit{Prisijungęs vartotojas} - vartotojas, sėkmingai atlikęs prisijungimo procedūrą programėlėje ir turintis galiojančią prisijungimo sesiją.
+					\item \textit{Administratorius} - vartotojas, atsakingas už sklandų programėlės veikimą, turintis padidintas teises paprastų vartotojų atžvilgiu.
+					\item \textit{Paskyra} - registracijos metu kliento nurodyti duomenys (vardas, pavardė, elektroninio pašto adresas, prisijungimo vardas, slaptažodis), padedantys identifikuoti klientą.
+					\item \textit{Facebook paskyra} - registracijos metu kliento autentifikacijai naudota paskyra.
+					\item \textit{Pranešimas} - sistemos informacinė žinutė vartotojui naudojant Android pranešimus (angl. push notifications).
+					\item \textit{Žemėlapis} - virtualus žemėlapis, kuriame matomi visi vartotojų pažymėti aktyvūs žymekliai, atitinkantys vartotojo nustatytą paieškos filtrą.
+					\item \textit{Filtras} - savybė, pagal kurią filtruojama, kurių stotelių žymeklius vartotojui rodyti žemėlapyje.
+					\item \textit{Reitingas} - žymeklio patikimumo rodiklis, žymintis pagal vartotojų balsus nustatomą tikimybę, kad žymeklio vietoje stovi keleivių kontrolė. 
+					\item \textit{Vieta} - GPS prieigos pagalba tiksliai nustatytos objekto buvimo koordinatės.
+					\item \textit{Stotelė} - vieta, pro kurią reguliariai kursuoja viešasis transportas.
+					\item \textit{Komentaras} - vartotojo nurodyta papildoma informacija apie žymeklio vietoje stovinčią keleivių kontrolę.
+					\item \textit{Maršrutas} - tam tikro autobuso kelionės metu aplankomų stotelių sąrašas.
+					\item \textit{Keleivių kontrolė} - kontrolieriai, tikrinantys, ar keleiviai turi galiojančius ir tinkamos nuolaidų grupės bilietus
+					\item \textit{Programėlė} - aplikacija, kurioje vartotojas gali pamatyti ar pažymėti žemėlapių vietas, kuriose yra keleivių kontrolė.
+					\item \textit{Facebook} - socialinis tinklas “Facebook”.
+				\end{itemize}
+\subsection{Užduotys}
+
+\subsection{Užduočių aprašai}
+\subsubsection{Registracija}
+	\textbf{Pagrindinis scenarijus:}\\
+	Vartotojas įsijungia programėlę ir patenka į prisijungimo langą. Joje spaudžia mygtuką “Register” ir patenka į registracijos langą. 
+	Registracijos lange vartotojas įveda prisijungimo vardą, savo vardą, pavardę, el. paštą, slaptažodį, slaptažodį pakartoja bei paspaudžia 
+	“Create my account”. Anketa sėkmingai sukuriama, vartojo įvesti duomenys išsaugomi duomenų bazėje ir vartotojas perkeliamas į prisijungimo langą.
+
+	\textbf{Alternatyvūs scenarijai:}
+	\begin{enumerate}
+		\item Jei slaptažodžio bei slaptažodžio pakartojimo laukai nesutampa, tada vartotojui programa pateikia informacinį pranešimą, kad įvesti slaptažodžiai nesutampa.
+		\item Jei įvestame slaptažodyje nėra skaičiaus ar didžiosios raidės, arba jis yra trumpesnis nei 5 simboliai, tada vartotojui programa pateikia informacinį pranešimą, kad slaptažodis netinkamas, jame privalo būti didžioji raidė ir skaičius ir kad jį turi sudaryti bent 5 simboliai.
+		\item Jei vartotojo įvestas prisijungimo vardas duomenų bazėje jau egzistuoja, tada vartotojui programa pateikia informacinį pranešimą, kad prisijungimo vardas netinkamas, nes jau yra vartotojas su tokiu prisijungimo vardu.
+		\item Jei vartotojo įvestame prisijungimo varde nėra 5 simbolių, programa pateikia informacinį pranešimą, kad prisijungimo vardas netinkamas, nes jame turi būti bent 5 simboliai.
+		\item Jei vartotojo įvestas el. paštas neatitinka el. pašto formato, programa informuoja vartotoją, kad įvestas el. paštas netinkamas.
+		\item Jei vartotojo įvestas prisijungimo vardas yra per ilgas, tada vartotojui programa pateikia informacinį pranešimą, kad prisijungimo vardas netinkamas, nes prisijungimo vardas negali būti ilgesnis nei 15 simbolių eilutė.
+		\item Jei  vartotojo įvestas slaptažodis yra per ilgas, tada vartotojui programa pateikia informacinį pranešimą, kad slaptažodis netinkamas, nes slaptažodis negali būti ilgesnis nei 20 simbolių eilutė.
+		\item Jei dėl trikdžių duomenų bazėje vartotojui prisiregistruoti nepavyksta, tada vartotojui programa pateikia informacinį pranešimą, kad sistemoje įvyko klaida ir siūloma pabandyti prisiregistruoti vėliau.
+	\end{enumerate} 
+
+\subsubsection{Prisijungimas}
+	\textbf{Pagrindinis scenarijus:}\\
+	Vartotojas įsijungia programėlę ir patenka į prisijungimo langą. Prisijungimo lange įveda savo prisijungimo vardą ir slaptažodį, 
+	spaudžia mygtuką “Login”, prisijungia ir yra perkeliamas į pagrindinį langą.
+	
+	\textbf{Alternatyvūs scenarijai:}
+	\begin{enumerate}
+		\item Jei vartotojas su tokiu prisijungimo vardu duomenų bazėje nebuvo rastas, tada vartotojui programa pateikia informacinį pranešimą, kad vartotojas su tokiu prisijungimo vardu programėlėje neegzistuoja.
+		\item Jei vartotojo įvestas slaptažodis šiam prisijungimo vardui nesutampa su slaptažodžiu, esančiu sistemoje, tada vartotojui programa pateikia informacinį pranešimą, kad įvestas slaptažodis yra neteisingas.
+		\item Jei vartotojas prisijungimo lange spaudžia “Continue with Facebook” ir vartotojo “Facebook” programėlės anketa sėkmingai panaudojama prisijungimui prie “AvoidATicket” programėlės, tada vartotojas yra prijungiamas ir perkeliamas į pagrindinį langą.
+		\item Jei vartotojas prisijungimo lange spaudžia “Continue with Facebook” ir vartotojo “Facebook” programėlės anketos nepavyksta panaudoti prisijungimui prie “AvoidATicket” programėlės, tada vartotojui programa pateikia informacinį pranešimą, kad “Facebook” aplikacijos prisijungimo duomenų panaudoti nepavyko.
+		\item Jei dėl trikdžių duomenų bazėje vartotojui prisijungti nepavyksta, tada vartotojui programa pateikia informacinį pranešimą, kad sistemoje įvyko klaida ir siūloma pabandyti prisijungti vėliau.
+		\item Jei vartotojas praeitą sesiją neatsijungė, tada programėlė automatiškai prijungia vartotoją prie programėlės ir iškart vartotoją perkelia į pagrindinį langą.
+	\end{enumerate} 
+
+\subsubsection{Profilio duomenų redagavimas}
+	\textbf{Pagrindinis scenarijus:}\\
+	Vartotojas pagrindiniame lange spaudžia mygtuką, ant kurio parašytas jo vardas ir pavardė, ir tada patenka į profilio 
+	redagavimo langą. Ten iš el. pašto, slaptažodžio, vardo, pavardės laukų paspaudžia ant vardo lauko ir įveda naują vardą. 
+	Tada paspaudžia mygtuką “Save” ir pakeisti duomenys išsaugomi duomenų bazėje. Vartotojas apie tai informuojamas informaciniu pranešimu. 
+	Pakeitęs duomenis, vartotojas paspaudžia mygtuką “Back” ir grįžtą į pagrindinį langą.
+
+	\textbf{Alternatyvūs scenarijai:}
+	\begin{enumerate}
+		\item Jei įvestame slaptažodyje nėra skaičiaus ar didžiosios raidės, arba jis yra trumpesnis nei 5 simboliai, tada vartotojui programa pateikia informacinį pranešimą, kad slaptažodis netinkamas, jame privalo būti didžioji raidė ir skaičius ir kad jį turi sudaryti bent 5 simboliai.
+		\item Jei vartotojo įvestas prisijungimo vardas duomenų bazėje jau egzistuoja, tada vartotojui programa pateikia informacinį pranešimą, kad prisijungimo vardas netinkamas, nes jau yra vartotojas su tokiu prisijungimo vardu.
+		\item Jei vartotojo įvestame prisijungimo varde nėra 5 simbolių, programa pateikia informacinį pranešimą, kad prisijungimo vardas netinkamas, nes jame turi būti bent 5 simboliai.
+		\item Jei vartotojo įvestas el. paštas neatitinka el. pašto formato, programa informuoja vartotoją, kad įvestas el. paštas netinkamas.
+		\item Jei vartotojo įvestas prisijungimo vardas yra per ilgas, tada vartotojui programa pateikia informacinį pranešimą, kad prisijungimo vardas netinkamas, nes prisijungimo vardas negali būti ilgesnis nei 15 simbolių eilutė.
+		\item Jei  vartotojo įvestas slaptažodis yra per ilgas, tada vartotojui programa pateikia informacinį pranešimą, kad slaptažodis netinkamas, nes slaptažodis negali būti ilgesnis nei 20 simbolių eilutė.
+		\item Jei dėl trikdžių duomenų bazėje vartotojui pakeisti duomenų nepavyksta, tada vartotojui programa pateikia informacinį pranešimą, kad sistemoje įvyko klaida ir siūloma pabandyti prisiregistruoti vėliau.
+	\end{enumerate} 
+
+\subsubsection{Komentaro apie žymeklį pridėjimas}
+	\textbf{Pagrindinis scenarijus:}\\
+    Vartotojas paspaudžia ant žymeklio, sistema jį nukelia į žymeklio informacijos langą. Vartotojas žymeklio informacijos lange 
+	įrašo komentarą į tam skirtą laukelį, spaudžia “Siųsti”. Sistema įrašo komentarą apie žymeklį į duomenų bazę. Sistema 
+	atvaizduoja komentarą komentarų sąrašo viršuje.
+
+	\textbf{Alternatyvūs scenarijai:}
+	\begin{enumerate}
+		\item Jei dėl trikdžių bandant pasiekti internetą, nepavyksta į duomenų bazę įrašyti vartotojo komentaro, tada vartotojui programa pateikia informacinį pranešimą, kad sistemoje įvyko klaida ir siūloma pabandyti vėliau.
+	\end{enumerate} 
+
+\subsubsection{Maršruto pridėjimas į sekamų sąrašą}
+	\textbf{Pagrindinis scenarijus:}\\
+	Vartotojas lange “Mano maršrutai” spaudžia “+” ir sistema atidaro bendrą miesto autobusų sąrašą, kuriame neįtraukti 
+	vartotojo jau anksčiau pažymėti autobusai, kurių maršrutai įtraukti į sekamų sąrašą. Vartotojas paspaudžia ant jį 
+	dominančio autobuso sąrašo elemento iš bendro miesto autobusų sąrašo, tada sistema įtraukia pasirinktą autobuso maršrutą 
+	į vartotojo sekamų maršrutų sąrašą. Sistema parodo pranešimą pranešimų srityje “Autobuso {autobusas} maršrutas sėkmingai 
+	įtrauktas į sekamų maršrutų sąrašą“. Sistema perkelia vartotoją i “Mano maršrutai” langą. Vartotojo pasirinktas autobuso 
+	elementas atvaizduojamas “Mano maršrutai” lango sąrašo gale.
+
+	\textbf{Alternatyvūs scenarijai:}
+	\begin{enumerate}
+		\item Jei dėl trikdžių bandant pasiekti internetą, nepavyksta vartotojui parodyti bendrą autobusų sąrašą ar pridėti autobuso maršrutą į sekamų maršrutų sąrašą, tada vartotojui programa pateikia informacinį pranešimą, kad sistemoje įvyko klaida ir siūloma pabandyti vėliau.
+	\end{enumerate} 
+
+\subsubsection{Atsijungimas}
+	\textbf{Pagrindinis scenarijus:}\\
+	Vartotojas pagrindiniame lange paspaudžia “Log Off”, sistema jį atjungia ir vartotojas yra nukeliamas į prisijungimo langą.
+
+\subsubsection{Žemėlapio ir jame esančių žymeklių peržiūra}
+	\textbf{Pagrindinis scenarijus:}\\
+	Vartotojas pagrindiniame lange paspaudžia “Open Map” ir yra nukeliamas į žemėlapio langą, kuriame rodomi visi galiojantys žymekliai.
+
+	\textbf{Alternatyvūs scenarijai:}
+	\begin{enumerate}
+		\item Jei vartotojas neturi davęs sutikimo programėlei naudotis GPS, tada ji prašo prieigos prie GPS pateikdama informacijos langą.
+		\begin{enumerate}
+			\item Jei vartotojas paspaudžia “Accept”, programėlei duodamas sutikimas naudotis telefono GPS ir vartotojas yra nukeliamas į žemėlapio langą, kuriame rodomi visi galiojantys žymekliai.
+			\item Jei vartotojas paspaudžia “Decline”, programa pateikia informacinį pranešimą, kad negali parodyti žemėlapio, nes vartotojas nesuteikė prieigos prie GPS.
+		\end{enumerate} 
+		\item Jei programai nepavyksta rasti vartotojo buvimo vietos, tada vartotojui programa pateikia informacinį pranešimą, kad vartotojo buvimo vietos rasti nepavyko.
+	\end{enumerate} 
+
+\subsubsection{Žemėlapio redagavimas. Žymeklių pridėjimas}
+	\textbf{Pagrindinis scenarijus:}\\
+	Vartotojas pagrindiniame lange paspaudžia “Put Marker” ir yra nukeliamas į žymeklių pridėjimo langą, tada paspaudžia ant žemėlapio ir žymeklis yra padedamas toje vietoje, kur buvo paspausta.
+
+	\textbf{Alternatyvūs scenarijai:}
+	\begin{enumerate}
+		\item Jei vartotojas neturi davęs sutikimo programėlei naudotis GPS, tada ji prašo prieigos prie GPS pateikdama informacijos langą.
+		\begin{enumerate}
+			\item Jei vartotojas paspaudžia “Accept”, programėlei duodamas sutikimas naudotis telefono GPS ir vartotojas yra nukeliamas į žymeklių pridėjimo langą, kuriame rodomi visi galiojantys žymekliai.
+			\item Jei vartotojas paspaudžia “Decline”, programa pateikia informacinį pranešimą, kad negali parodyti žemėlapio, nes vartotojas nesuteikė prieigos prie GPS.
+		\end{enumerate} 
+		\item Jei programai nepavyksta rasti vartotojo buvimo vietos, tada vartotojui programa pateikia informacinį pranešimą, kad vartotojo buvimo vietos rasti nepavyko.
+		\item Jei vartotojas bando padėti žymeklį vietoje, kuri yra nutolusi daugiau nei 1.5 km nuo vartotojo, tada vartotojui programa pateikia informacinį pranešimą, kad vartotojas negali dėti žymeklių vietose, nutolusiose nuo vartotojo per daugiau nei 1.5 km.
+	\end{enumerate} 
+
+\subsubsection{Žemėlapio redagavimas. Vartotojų balsavimas dėl žymeklio teisingumo}
+	\textbf{Pagrindinis scenarijus:}\\
+	Vartotojas pagrindiniame lange paspaudžia “Open Map” ir yra nukeliamas į žemėlapio langą, kuriame rodomi visi galiojantys žymekliai. 
+	Vartotojas paspaudžia ant pasirinkto galiojančio žymeklio, kuris yra ne toliau nei 1,5km nuo jo dabartinės padėties ir yra nukeliamas 
+	į žymeklio balsavimo langą. Jei kontrolė vartotojo pasirinkto žymeklio vietoje jau nebestovi, vartotojas paspaudžia mygtuką “Nestovi”, 
+	sistema išsaugoja vartotojo balsą duomenų bazėje, žymintį, kad kontrolė pasitraukė iš pasirinkto žymeklio vietos. Jei kontrolė žymeklio 
+	vietoje vis dar stovi, vartotojas paspaudžia mygtuką “Dar stovi” ir sistema išsaugo vartotojo balsą duomenų bazėje, patvirtinantį, kad 
+	kontrolė dar yra pasirinkto žymeklio vietoje. Vartotojas, atidavęs savo balsą, yra perkeliamas į bendrą žemėlapio langą su visais 
+	galiojančiais žymekliais. Žymeklio, gavusio 51% balsų, žyminčių, kad kontrolė žymeklio vietoje jau nebestovi, spalva yra pakeičiama į pilką.
+
+	\textbf{Alternatyvūs scenarijai:}
+	\begin{enumerate}
+		\item Jei vartotojas pasirenka žymeklį, esantį toliau nei 1,5km nuo jo esamos buvimo vietos, nustatytos pagal GPS, vartotojui nėra rodomas žymeklio balsavimo langas ir jam neleidžiama balsuoti.
+		\item Jei programai nepavyksta rasti vartotojo buvimo vietos, tada vartotojui programa pateikia informacinį pranešimą, kad vartotojo buvimo vietos rasti nepavyko.
+		\item Jei vartotojas bando balsuoti už tą patį žymeklį antrą kartą, sistema jam praneša, kad jis jau balsavo anksčiau ir neįskaito vartotojo balso.
+	\end{enumerate} 
+
+\subsubsection{Žemėlapio redagavimas. Žymeklių trynimas}
+	\textbf{Pagrindinis scenarijus:}\\
+	Administratorius pagrindiniame lange paspaudžia “Clear Markers”, tada programėlė ištrina visus žymeklius, esamus žemėlapyje.
+
+	\textbf{Alternatyvūs scenarijai:}
+	\begin{enumerate}
+		\item Jei dėl trikdžių nepavykstą ištrinti bent vieno žymeklių, ištrinti žymekliai yra grąžinami į savo vietas ir programėlė informuoja administratorių informaciniu pranešimu, kad dėl trikdžių duomenų bazėje nepavyko ištrinti žymeklių ir siūloma administratoriui pabandyti vėliau.
+	\end{enumerate} 
+
+\subsubsection{Susisiekimas su administracija}
+	\textbf{Pagrindinis scenarijus:}\\
+	Vartotojas pagrindiniame lange paspaudžia “FAQ | Ask a question” ir patenka į D.U.K. langą. D.U.K lange vartotojas 
+	spaudžia “Ask a question” mygtuką ir patenka į klausimo uždavimo langą. Klausimo uždavimo lange vartotojas įveda 
+	savo el. paštą ir klausimą bei spaudžia “Send us the question”. Klausimas nusiunčiamas sėkmingai, o programa informuoja 
+	vartotoją, kad klausimą nusiųsti pavyko.
+
+	\textbf{Alternatyvūs scenarijai:}
+	\begin{enumerate}
+		\item Jei vartotojas el. pašto lauką palieka tuščią, programa informuoja vartotoją, kad klausimo nusiųsti nepavyko, nes vartotojas nepateikė savo el. pašto.
+		\item Jei vartotojo įvestas el. paštas neatitinka el. pašto formato, programa informuoja vartotoją, kad įvestas el. paštas netinkamas.
+		\item Jei vartotojas klausimo lauką palieka tuščią, programa informuoja vartotoją, kad klausimo nusiųsti nepavyko, nes vartotojas klausimo lauką paliko tuščią.
+	\end{enumerate} 
+
+\section{Rezultatai}
 
 \sectionnonum{Išvada}
-Visos trys projekto dalys, atliktos Programų sistemų inžinerijos kurso metu, leido geriau susipažinti
-su vientisu ir nuosekliu IT projekto kūrimo procesu, pradedant nuo detalios verslo srities analizės,
-į kurią įeina ir rinkos tyrimai, tęsiant reikalavimų specifikacija, kuri nusako aiškius numatomos
-sistemos rėmus ir baigiant aiškiu ir detaliu architektūriniu vaizdu, kurį apibrėžia skirtingi sistemos
-architektūriniai pjūviai. Nuoseklus projekto kūrimo procesas, kurio pagal šio kurso turinį buvo bandoma
-laikytis, leidžia išvengti netikėtumų eigoje, papildomų nenumatytų kaštų, tobulinimo kliūčių ir labai
-tikėtina - greitos sistemos ,,žūties''.
 	
 \sectionnonum{Literatūros sąrašas}
-\begin{itemize}
+\begin{enumerate}[label={[\arabic*]}]
 	\item Doc. dr. K. Petrausko Programų Sistemų Inžinerijos kurso konspektai
-    \item A. Abran, J. W. Moore, P.Bourque, R. Dupuis, L. L. Tripp - ,,Guide to the Software Engineering Body of Knowledge''
+	\item Doug Rosenberg and Matt Stephens - „Use Case Driven Object Modeling with UML Theory and Practice“
 	\item UML dokumentacija \url{https://www.tutorialspoint.com/uml/uml_2_overview.htm}
 	\item OMG UML v.2.5 Dokumentacija diagramoms, žymėjimui
-	\item Informacija apie išdėstymo tinkle (Deployment) diagramas, pavyzdžiai \url{http://www.uml-diagrams.org/deployment-diagrams-overview.html} 
-	\item https://osp.stat.gov.lt/statistiniu-rodikliu-analize?theme=all\#/
-	\item https://www.androidauthority.com/publishing-first-app-play-store-need-know-383572/
-	\item https://www.serveriai.lt/
-	\item https://www.ovh.com/us/dedicated-servers/
-	\item https://adwords.google.com/ko/KeywordPlanner/
-	\item https://www.webpagefx.com/SEO-Pricing.html
-\end{itemize}
+\end{enumerate}
 
-		
 \end{document}
