@@ -22,7 +22,7 @@
 \faculty{Matematikos ir informatikos fakultetas}
 \department{Programų sistemų katedra}
 \papertype{Programų sistemų inžinerija}
-\title{Keleivių kontrolės vengimo programėlė}
+\title{Keleivių kontrolės paieškos programėlė}
 \titleineng{AVOID A TICKET}
 \status{2 kurso 5 grupės studentai}
 \author{Elena Reivytytė}
@@ -41,6 +41,7 @@
 \maketitle
 
 \sectionnonum{Anotacija}
+Dokumente pateikiamas ICONIX programų kūrimo proceso pirmojo etapo aprašas, kuriame aprašoma statinė programos struktūra, išreikšta supaprastinta klasių diagrama, kurioje yra tik agregacijos ir generalizacijos ryšiai, ir panaudojamumo atvejų tekstai, nurodantys, kaip sistema turi funkcionuoti. Šiame etape pateikiamas projektuojamos sistemos modelis tebėra verslo abstrakcijų lygmenyje, todėl išreikštų sistemos dalių (atributų, metodų, kitų sąveikos elementų) čia nenurodoma.
 
 \tableofcontents
 
@@ -212,6 +213,19 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 
 \section{Statinė programų sistemos struktūra}	
 \subsection{Esybių diagrama}
+	\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.6]{img/esybiu_diagrama}
+				\caption{Esybių diagrama}
+				\label{img:Esybių diagrama}
+			\end{figure}
+\subsection{Reikalavimų - esybių atsekamumo matrica}
+	\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.4]{img/uzduociu_matrica}
+				\caption{Užduočių atsekamumo matrica}
+				\label{img:matrix}
+			\end{figure}
 
 \subsection{Žodynas}
 				\renewcommand{\labelitemi}{$\bullet$}
@@ -235,6 +249,12 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 					\item \textit{Facebook} - socialinis tinklas “Facebook”.
 				\end{itemize}
 \subsection{Užduotys}
+	\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.5]{img/uzduotys}
+				\caption{Užduotys}
+				\label{img:uzduotys}
+			\end{figure}
 
 \subsection{Užduočių aprašai}
 \subsubsection{Registracija}
@@ -254,6 +274,12 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 		\item Jei  vartotojo įvestas slaptažodis yra per ilgas, tada vartotojui programa pateikia informacinį pranešimą, kad slaptažodis netinkamas, nes slaptažodis negali būti ilgesnis nei 20 simbolių eilutė.
 		\item Jei dėl trikdžių duomenų bazėje vartotojui prisiregistruoti nepavyksta, tada vartotojui programa pateikia informacinį pranešimą, kad sistemoje įvyko klaida ir siūloma pabandyti prisiregistruoti vėliau.
 	\end{enumerate} 
+	\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.55]{img/mockup_registration}
+				\caption{Registracija}
+				\label{img:registracija}
+			\end{figure}
 
 \subsubsection{Prisijungimas}
 	\textbf{Pagrindinis scenarijus:}\\
@@ -269,6 +295,12 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 		\item Jei dėl trikdžių duomenų bazėje vartotojui prisijungti nepavyksta, tada vartotojui programa pateikia informacinį pranešimą, kad sistemoje įvyko klaida ir siūloma pabandyti prisijungti vėliau.
 		\item Jei vartotojas praeitą sesiją neatsijungė, tada programėlė automatiškai prijungia vartotoją prie programėlės ir iškart vartotoją perkelia į pagrindinį langą.
 	\end{enumerate} 
+	\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.3]{img/mockup_login}
+				\caption{Prisijungimas}
+				\label{img:prisijungimas}
+			\end{figure}
 
 \subsubsection{Profilio duomenų redagavimas}
 	\textbf{Pagrindinis scenarijus:}\\
@@ -287,7 +319,12 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 		\item Jei  vartotojo įvestas slaptažodis yra per ilgas, tada vartotojui programa pateikia informacinį pranešimą, kad slaptažodis netinkamas, nes slaptažodis negali būti ilgesnis nei 20 simbolių eilutė.
 		\item Jei dėl trikdžių duomenų bazėje vartotojui pakeisti duomenų nepavyksta, tada vartotojui programa pateikia informacinį pranešimą, kad sistemoje įvyko klaida ir siūloma pabandyti prisiregistruoti vėliau.
 	\end{enumerate} 
-
+	\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.55]{img/mockup_profileedit}
+				\caption{Profilio redagavimas}
+				\label{img:profilio redagavimas}
+			\end{figure}
 \subsubsection{Komentaro apie žymeklį pridėjimas}
 	\textbf{Pagrindinis scenarijus:}\\
     Vartotojas paspaudžia ant žymeklio, sistema jį nukelia į žymeklio informacijos langą. Vartotojas žymeklio informacijos lange 
@@ -298,6 +335,12 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 	\begin{enumerate}
 		\item Jei dėl trikdžių bandant pasiekti internetą, nepavyksta į duomenų bazę įrašyti vartotojo komentaro, tada vartotojui programa pateikia informacinį pranešimą, kad sistemoje įvyko klaida ir siūloma pabandyti vėliau.
 	\end{enumerate} 
+	\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.6]{img/mockup_markerInfoWindow}
+				\caption{Žymeklio informacijos langas}
+				\label{img:Žymeklio informacijos langas}
+			\end{figure}
 
 \subsubsection{Maršruto pridėjimas į sekamų sąrašą}
 	\textbf{Pagrindinis scenarijus:}\\
@@ -312,6 +355,12 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 	\begin{enumerate}
 		\item Jei dėl trikdžių bandant pasiekti internetą, nepavyksta vartotojui parodyti bendrą autobusų sąrašą ar pridėti autobuso maršrutą į sekamų maršrutų sąrašą, tada vartotojui programa pateikia informacinį pranešimą, kad sistemoje įvyko klaida ir siūloma pabandyti vėliau.
 	\end{enumerate} 
+	\begin{figure}[H]
+				\centering
+				\includegraphics[scale=1.5]{img/mockup_AddRoute}
+				\caption{Maršruto pridėjimo langas}
+				\label{img:Maršruto pridėjimo langas}
+			\end{figure}
 
 \subsubsection{Atsijungimas}
 	\textbf{Pagrindinis scenarijus:}\\
@@ -330,6 +379,12 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 		\end{enumerate} 
 		\item Jei programai nepavyksta rasti vartotojo buvimo vietos, tada vartotojui programa pateikia informacinį pranešimą, kad vartotojo buvimo vietos rasti nepavyko.
 	\end{enumerate} 
+	\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.6]{img/mockup_Main_Window}
+				\caption{Pagrindinis langas}
+				\label{img:Pagrindinis langas}
+			\end{figure}
 
 \subsubsection{Žemėlapio redagavimas. Žymeklių pridėjimas}
 	\textbf{Pagrindinis scenarijus:}\\
@@ -345,6 +400,12 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 		\item Jei programai nepavyksta rasti vartotojo buvimo vietos, tada vartotojui programa pateikia informacinį pranešimą, kad vartotojo buvimo vietos rasti nepavyko.
 		\item Jei vartotojas bando padėti žymeklį vietoje, kuri yra nutolusi daugiau nei 1.5 km nuo vartotojo, tada vartotojui programa pateikia informacinį pranešimą, kad vartotojas negali dėti žymeklių vietose, nutolusiose nuo vartotojo per daugiau nei 1.5 km.
 	\end{enumerate} 
+	\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.2]{img/mockup_AddMarker}
+				\caption{Žymeklio pridėjimo langas}
+				\label{img:Žymeklio pridėjimo langas}
+			\end{figure}
 
 \subsubsection{Žemėlapio redagavimas. Vartotojų balsavimas dėl žymeklio teisingumo}
 	\textbf{Pagrindinis scenarijus:}\\
@@ -362,6 +423,12 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 		\item Jei programai nepavyksta rasti vartotojo buvimo vietos, tada vartotojui programa pateikia informacinį pranešimą, kad vartotojo buvimo vietos rasti nepavyko.
 		\item Jei vartotojas bando balsuoti už tą patį žymeklį antrą kartą, sistema jam praneša, kad jis jau balsavo anksčiau ir neįskaito vartotojo balso.
 	\end{enumerate} 
+	\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.6]{img/mockup_markerInfoWindow}
+				\caption{Žymeklio informacijos langas}
+				\label{img:Žymeklio informacijos langas}
+			\end{figure}
 
 \subsubsection{Žemėlapio redagavimas. Žymeklių trynimas}
 	\textbf{Pagrindinis scenarijus:}\\
@@ -385,11 +452,35 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 		\item Jei vartotojo įvestas el. paštas neatitinka el. pašto formato, programa informuoja vartotoją, kad įvestas el. paštas netinkamas.
 		\item Jei vartotojas klausimo lauką palieka tuščią, programa informuoja vartotoją, kad klausimo nusiųsti nepavyko, nes vartotojas klausimo lauką paliko tuščią.
 	\end{enumerate} 
-
-\section{Rezultatai}
-
+	\begin{figure}[H]
+				\centering
+				\includegraphics[scale=1.4]{img/mockup_admincomunication}
+				\caption{Susisiekimas su administracija}
+				\label{img:Susisiekimas su administracija}
+			\end{figure}
+\subsection{Reikalavimų - užduočių atsekamumo matrica}
+	\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.4]{img/uzduociu_matrica}
+				\caption{Užduočių atsekamumo matrica}
+				\label{img:matrix}
+			\end{figure}
+\section{Rastų klaidų sąrašas}
+	\begin{enumerate}
+		\item Struktūriniame esybių modelyje nebuvo Maršruto esybės.
+		\item Struktūriniame esybių modelyje Filtro esybė buvo agregacijos ryšiu sujungta su žymekliu.
+		\item Struktūriniame dalykinės srities modelyje buvo naudojamos ne tik agregacijos ir generalizacijos.
+		\item Netikslus funkcinis reikalavimas, nusakantis, kiek laiko po žymeklio pridėjimo jis yra matomas vartotojams.
+		\item Užduočių aprašymuose naudojama ne tik tiesioginė nuosaka.
+		\item Struktūriniame esybių modelyje nebuvo atskirų Paskiros ir “Facebook” paskyros esybių.
+		\item Nebuvo sunumeruoti paveikslėliai.
+		\item Nebuvo funkcinio reikalavimo vartotojo galimybei pasirinkti maršrutą ir tikrinti stoteles pagal jį.
+		\item Nebuvo funkcinio reikalavimo vartotojo galimybei filtruoti matomus žymeklius pagal pasirinktą maršrutą.
+		\item Netiksliai aprašytas poreikis, kokiu atstumu nuo vartotojo buvimo vietos, jis gali padėti žymeklį.
+	\end{enumerate}
 \sectionnonum{Išvada}
-	
+Šiame etape sukurta įvadinė verslo taisyklių logika leidžia toliau sėkmingai detalizuoti sistemos komponentus pereinant į žemesnius abstrakcijos lygius - sistemą galima skaidyti į atskirus verslo esybių modulius ir kiekvieną jų nagrinėti atskirai. Kadangi ICONIX proceso esmė - klaidinga kiekvienos iteracijos įeiga, todėl nereikia baimintis likusių neapibrėžtumų ir abstraktumo - visa tai bus detalizuota kitų laboratorinių darbų metu.
+
 \sectionnonum{Literatūros sąrašas}
 \begin{enumerate}[label={[\arabic*]}]
 	\item Doc. dr. K. Petrausko Programų Sistemų Inžinerijos kurso konspektai
