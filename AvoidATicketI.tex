@@ -41,11 +41,12 @@
 \maketitle
 
 \sectionnonum{Anotacija}
-Dokumente pateikiamas ICONIX programų kūrimo proceso pirmojo etapo aprašas, kuriame aprašoma statinė programos struktūra, išreikšta supaprastinta klasių diagrama, kurioje yra tik agregacijos ir generalizacijos ryšiai, ir panaudojamumo atvejų tekstai, nurodantys, kaip sistema turi funkcionuoti. Šiame etape pateikiamas projektuojamos sistemos modelis tebėra verslo abstrakcijų lygmenyje, todėl išreikštų sistemos dalių (atributų, metodų, kitų sąveikos elementų) čia nenurodoma.
-
+Šis dokumentas skirtas Vilniaus universiteto Programų sistemų 2 kurso Programų sistemų inžinerijos II modulio pirmąjam iš trijų laboratorinių darbų atlikti.
 \tableofcontents
 
 \sectionnonum{Įvadas}
+Dokumente pateikiamas projektuojamos sistemos funkcinių ir nefunkcinių reikalavimų rinkinys, kuris neįeina į ICONIX proceso eigą, taip pat - ICONIX programų kūrimo proceso pirmojo etapo aprašas, kuriame aprašoma statinė programos struktūra, išreikšta supaprastinta klasių diagrama, kurioje yra tik agregacijos ir generalizacijos ryšiai, ir panaudojamumo atvejų tekstai, nurodantys, kaip sistema turi funkcionuoti. Šiame etape pateikiamas projektuojamos sistemos modelis tebėra verslo abstrakcijų lygmenyje, todėl išreikštų sistemos dalių (atributų, metodų, kitų sąveikos elementų) čia nenurodoma.\\
+
 \noindent
 \textbf{Programų sistemos pavadinimas}\\
 Programėlės pavadinimas AvoidATicket išvertus iš anglų kalbos reiškia „Nepirk bilieto be reikalo“\\
@@ -87,6 +88,7 @@ Tikslas ištirti rinką galimam programėlės vystymui. Taip pat programėlės p
 \end{enumerate} 
 
 \section{Reikalavimai}
+Šio skyriaus turinys neįeina į ICONIX proceso aprašą, tačiau yra neišvengiamas norint užtikrinti užsakovo poreikių įgyvendinimą.
 \subsection{Funkciniai reikalavimai }
 Šiame skyriuje pateikiami sistemos funkciniai reikalavimai, t.y. pagrindinės sistemos atliekamos funkcijos, konkretūs jų aprašymai. (Žr. 1 lentelė)
 
@@ -210,7 +212,8 @@ NFR\rownumber & Žymeklių duomenys (koordinates ir padėjimo laikas) saugomi du
 NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & Būtina\tabularnewline \hline
 \end{longtable}
 
-\section{Statinė programų sistemos struktūra}	
+\section{Statinė programų sistemos struktūra}
+Šiame skyriuje pateikiamas statinis dalykinės srities modelis, kurio esybės yra verslo modelio abstrakcijų lygmenyje, nėra jokių detalizuotų ir išreikštinių projektuojamos sistemos elementų.	
 \subsection{Esybių diagrama}
 	\begin{figure}[H]
 				\centering
@@ -219,6 +222,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 				\label{img:Esybių diagrama}
 			\end{figure}
 \subsection{Reikalavimų - esybių atsekamumo matrica}
+Pateikiama matrica padeda užtikrinti, jog kiekvienas reikalavimas yra padengtas kuria nors verslo esybe, taip pat garantuoja, kad neturime jokių perteklinių sistemos esybių. (Žr. 2 pav.)
 	\begin{figure}[H]
 				\centering
 				\includegraphics[scale=0.4]{img/uzduociu_matrica}
@@ -248,6 +252,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 					\item \textit{Facebook} - socialinis tinklas “Facebook”.
 				\end{itemize}
 \subsection{Užduotys}
+3 pav. diagrama supaprastintai parodo aktorių atliekamas užduotis, sąveiką su sistema, kiekviena užduotis aprašuose išnagrinėta detaliau.
 	\begin{figure}[H]
 				\centering
 				\includegraphics[scale=0.5]{img/uzduotys}
@@ -256,6 +261,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 			\end{figure}
 
 \subsection{Užduočių aprašai}
+Pateikiami užduočių tekstai leidžia konkrečiau suvokti aktoriaus veiksmų eiliškumą ir visas iškylančias aplinkybes užduoties atlikimo metu.
 \subsubsection{Registracija}
 	\textbf{Pagrindinis scenarijus:}\\
 	Vartotojas įsijungia programėlę ir patenka į prisijungimo langą (žr. 5 pav.). Joje spaudžia mygtuką “Register” ir patenka į registracijos langą (žr. 4 pav.). 
@@ -458,13 +464,18 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 				\label{img:Susisiekimas su administracija}
 			\end{figure}
 \subsection{Reikalavimų - užduočių atsekamumo matrica}
+Ši matrica leidžia vaizdžiai užtikrinti, jog kiekvienam reikalavimui turime pritaikytą užduoties atvejį, t.y. nepalikome abstrakčių ir neaiškių kuriamos programos dalių. (Žr. 13 pav.)
 	\begin{figure}[H]
 				\centering
 				\includegraphics[scale=0.4]{img/uzduociu_matrica}
 				\caption{Užduočių atsekamumo matrica}
 				\label{img:matrix}
 			\end{figure}
-\section{Rastų klaidų sąrašas}
+\sectionnonum{Rezultatai ir išvados}
+Šiame etape sukurta įvadinė verslo taisyklių logika leidžia toliau sėkmingai detalizuoti sistemos komponentus pereinant į žemesnius abstrakcijos lygius - sistemą galima skaidyti į atskirus verslo esybių modulius ir kiekvieną jų nagrinėti atskirai. Kadangi ICONIX proceso esmė - klaidinga kiekvienos iteracijos įeiga, todėl nereikia baimintis likusių neapibrėžtumų ir abstraktumo - visa tai bus detalizuota kitų laboratorinių darbų metu.
+
+\sectionnonum{Priedai}
+\subsection{Rastų klaidų sąrašas}
 	\begin{enumerate}[itemsep=-2mm]
 		\item Struktūriniame esybių modelyje nebuvo Maršruto esybės.
 		\item Struktūriniame esybių modelyje Filtro esybė buvo agregacijos ryšiu sujungta su žymekliu.
@@ -477,8 +488,6 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 		\item Nebuvo funkcinio reikalavimo vartotojo galimybei filtruoti matomus žymeklius pagal pasirinktą maršrutą.
 		\item Netiksliai aprašytas poreikis, kokiu atstumu nuo vartotojo buvimo vietos, jis gali padėti žymeklį.
 	\end{enumerate}
-\sectionnonum{Išvada}
-Šiame etape sukurta įvadinė verslo taisyklių logika leidžia toliau sėkmingai detalizuoti sistemos komponentus pereinant į žemesnius abstrakcijos lygius - sistemą galima skaidyti į atskirus verslo esybių modulius ir kiekvieną jų nagrinėti atskirai. Kadangi ICONIX proceso esmė - klaidinga kiekvienos iteracijos įeiga, todėl nereikia baimintis likusių neapibrėžtumų ir abstraktumo - visa tai bus detalizuota kitų laboratorinių darbų metu.
 
 \sectionnonum{Literatūros sąrašas}
 \begin{enumerate}[label={[\arabic*]};itemsep=-2mm]
