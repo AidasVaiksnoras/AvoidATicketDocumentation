@@ -45,20 +45,19 @@ Dokumente pateikiamas ICONIX programų kūrimo proceso pirmojo etapo aprašas, k
 
 \tableofcontents
 
-\section{Įvadas}
-
-\subsection{Programų sistemos pavadinimas}
-Programėlės pavadinimas AvoidATicket išvertus iš anglų kalbos reiškia „Nepirk bilieto be reikalo“
-\subsection{Dalykinė sritis}
-Programėle, kurioje viešojo transporto keleiviai gali dalintis informacija apie vykdomas viešojo transporto bilietų patikras.
-\subsection{Probleminė sritis}
-Programėlė yra skirta padėti klientams sutrumpinti kelionių laiką parodant, kuriose vietose keleivių kontrolė tikrina autobusus.
-\subsection{Vartotojas}
-Klientas - bet kokio amžiaus žmogus, kuris turi išmanųjį telefoną ir naudojasi miestinių autobusų teikiamomis paslaugomis.
-\subsection{Darbo pagrindas}
-Tikslas ištirti rinką galimam programėlės vystymui. Taip pat programėlės projektavimas teoriniame lygmeny siekiant supaprastint programavimo darbus.
-
-\subsection{Darbo pagrindas}
+\sectionnonum{Įvadas}
+\noindent
+\textbf{Programų sistemos pavadinimas}\\
+Programėlės pavadinimas AvoidATicket išvertus iš anglų kalbos reiškia „Nepirk bilieto be reikalo“\\
+\textbf{Dalykinė sritis}\\
+Programėle, kurioje viešojo transporto keleiviai gali dalintis informacija apie vykdomas viešojo transporto bilietų patikras.\\
+\textbf{Probleminė sritis}\\
+Programėlė yra skirta padėti klientams sutrumpinti kelionių laiką parodant, kuriose vietose keleivių kontrolė tikrina autobusus.\\
+\textbf{Vartotojas}\\
+Klientas - bet kokio amžiaus žmogus, kuris turi išmanųjį telefoną ir naudojasi miestinių autobusų teikiamomis paslaugomis.\\
+\textbf{Darbo pagrindas}\\
+Tikslas ištirti rinką galimam programėlės vystymui. Taip pat programėlės projektavimas teoriniame lygmeny siekiant supaprastint programavimo darbus.\\
+\textbf{Darbo pagrindas}\\
 \begin{tabular}{lr}
    Elena Reivytytė & 20\% \\
    Aidas Vaikšnoras & 20\% \\
@@ -68,7 +67,7 @@ Tikslas ištirti rinką galimam programėlės vystymui. Taip pat programėlės p
 \end{tabular}
 
 \section{Poreikiai}
-\begin{enumerate}
+\begin{enumerate}[itemsep=-2mm]
 	\item Vartotojas gali prisijungti, atsijungti ir registruotis prie programėlės.
 	\item Vartotojas turi galimybę prisijungti naudojantis “Facebook” paskyra.
 	\item Vartotojas gali keisti registracijos metu įvestus duomenis: vardą, pavardę, el. paštą, slaptažodį, prisijungimo vardą.
@@ -99,7 +98,7 @@ Tikslas ištirti rinką galimam programėlės vystymui. Taip pat programėlės p
 \textbf{Numeris} & \centering{\textbf{Reikalavimas}} & \textbf{Svarba} \tabularnewline \hline
 
 FR\rownumberfr & Įsijungęs programėlę, vartotojas gali:
-						\begin{enumerate}
+						\begin{enumerate}[itemsep=-2mm]
 							\item registruotis
 							\item prisijungti
 							\item neteisingai įvedęs duomenis, vartotojas gali pasitaisyti
@@ -109,7 +108,7 @@ FR\rownumberfr & Įsijungęs programėlę, vartotojas gali:
 FR\rownumberfr & Prisijungęs vartotojas gali atsijungti.\newline \textit{Žr. skyrius poreikiai, 1 punktas} & Būtina\tabularnewline \hline
 FR\rownumberfr & Vartotojas gali prisijungti naudodamas “Facebook” paskyrą.\newline \textit{Žr. skyrius poreikiai, 2 punktas} & Būtina\tabularnewline \hline
 FR\rownumberfr & Savo paskyroje vartotojas gali keisti:
-						\begin{enumerate}
+						\begin{enumerate}[itemsep=-2mm]
 							\item slaptažodį
 							\item vardą
 							\item pavardę
@@ -127,7 +126,7 @@ FR\rownumberfr & Vartotojas gali perskaityti D.U.K. pačioje programėlėje.\new
 FR\rownumberfr & Vartotojas gali užduoti klausimą pačioje programėlėje.\newline \textit{Žr. skyrius poreikiai, 10 punktas} & Būtina\tabularnewline \hline
 
 FR\rownumberfr & Administratorius gali pakeisti bet kurio vartotojo:
-						\begin{enumerate}
+						\begin{enumerate}[itemsep=-2mm]
 							\item slaptažodį
 							\item vardą
 							\item pavardę
@@ -181,7 +180,7 @@ NFR\rownumber & Kodo versijavimui ir dalinimuisi naudojama Github repozitorija. 
 \multicolumn{3}{ |l| }{\textbf{Tikslumo reikalavimai duomenų saugojimui:}} \tabularnewline \hline
 \textbf{Numeris} & \centering{\textbf{Reikalavimas}} & \textbf{Svarba} \tabularnewline \hline
 NFR\rownumber & Vartotojo informacijai skiriama:
-						\begin{enumerate}
+						\begin{enumerate}[itemsep=-2mm]
 							\item vardui, pavardei ir prisijungimo vardui - 15 simbolių
 							\item slaptažodžiui - 20 simbolių
 							\item el. paštui - 60 simbolių
@@ -229,7 +228,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 
 \subsection{Žodynas}
 				\renewcommand{\labelitemi}{$\bullet$}
-				\begin{itemize}
+				\begin{itemize}[itemsep=-2mm]
 					\item \textit{Vartotojas} - klientas, prisiregistravęs prie aplikacijos.
 					\item \textit{Neprisijungęs vartotojas} - vartotojas, kuris nėra atlikęs prisijungimo procedūros programėlėje ir neturi galiojančios prisijungimo sesijos.
 					\item \textit{Prisijungęs vartotojas} - vartotojas, sėkmingai atlikęs prisijungimo procedūrą programėlėje ir turintis galiojančią prisijungimo sesiją.
@@ -264,7 +263,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 	“Create my account”. Anketa sėkmingai sukuriama, vartojo įvesti duomenys išsaugomi duomenų bazėje ir vartotojas perkeliamas į prisijungimo langą.
 
 	\textbf{Alternatyvūs scenarijai:}
-	\begin{enumerate}
+	\begin{enumerate}[itemsep=-2mm]
 		\item Jei slaptažodžio bei slaptažodžio pakartojimo laukai nesutampa, tada vartotojui programa pateikia informacinį pranešimą, kad įvesti slaptažodžiai nesutampa.
 		\item Jei įvestame slaptažodyje nėra skaičiaus ar didžiosios raidės, arba jis yra trumpesnis nei 5 simboliai, tada vartotojui programa pateikia informacinį pranešimą, kad slaptažodis netinkamas, jame privalo būti didžioji raidė ir skaičius ir kad jį turi sudaryti bent 5 simboliai.
 		\item Jei vartotojo įvestas prisijungimo vardas duomenų bazėje jau egzistuoja, tada vartotojui programa pateikia informacinį pranešimą, kad prisijungimo vardas netinkamas, nes jau yra vartotojas su tokiu prisijungimo vardu.
@@ -287,7 +286,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 	spaudžia mygtuką “Login”, prisijungia ir yra perkeliamas į pagrindinį langą.
 	
 	\textbf{Alternatyvūs scenarijai:}
-	\begin{enumerate}
+	\begin{enumerate}[itemsep=-2mm]
 		\item Jei vartotojas su tokiu prisijungimo vardu duomenų bazėje nebuvo rastas, tada vartotojui programa pateikia informacinį pranešimą, kad vartotojas su tokiu prisijungimo vardu programėlėje neegzistuoja.
 		\item Jei vartotojo įvestas slaptažodis šiam prisijungimo vardui nesutampa su slaptažodžiu, esančiu sistemoje, tada vartotojui programa pateikia informacinį pranešimą, kad įvestas slaptažodis yra neteisingas.
 		\item Jei vartotojas prisijungimo lange spaudžia “Continue with Facebook” ir vartotojo “Facebook” programėlės anketa sėkmingai panaudojama prisijungimui prie “AvoidATicket” programėlės, tada vartotojas yra prijungiamas ir perkeliamas į pagrindinį langą.
@@ -310,7 +309,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 	Pakeitęs duomenis, vartotojas paspaudžia mygtuką “Back” ir grįžtą į pagrindinį langą.
 
 	\textbf{Alternatyvūs scenarijai:}
-	\begin{enumerate}
+	\begin{enumerate}[itemsep=-2mm]
 		\item Jei įvestame slaptažodyje nėra skaičiaus ar didžiosios raidės, arba jis yra trumpesnis nei 5 simboliai, tada vartotojui programa pateikia informacinį pranešimą, kad slaptažodis netinkamas, jame privalo būti didžioji raidė ir skaičius ir kad jį turi sudaryti bent 5 simboliai.
 		\item Jei vartotojo įvestas prisijungimo vardas duomenų bazėje jau egzistuoja, tada vartotojui programa pateikia informacinį pranešimą, kad prisijungimo vardas netinkamas, nes jau yra vartotojas su tokiu prisijungimo vardu.
 		\item Jei vartotojo įvestame prisijungimo varde nėra 5 simbolių, programa pateikia informacinį pranešimą, kad prisijungimo vardas netinkamas, nes jame turi būti bent 5 simboliai.
@@ -332,7 +331,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 	atvaizduoja komentarą komentarų sąrašo viršuje.
 
 	\textbf{Alternatyvūs scenarijai:}
-	\begin{enumerate}
+	\begin{enumerate}[itemsep=-2mm]
 		\item Jei dėl trikdžių bandant pasiekti internetą, nepavyksta į duomenų bazę įrašyti vartotojo komentaro, tada vartotojui programa pateikia informacinį pranešimą, kad sistemoje įvyko klaida ir siūloma pabandyti vėliau.
 	\end{enumerate} 
 	\begin{figure}[H]
@@ -352,7 +351,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 	elementas atvaizduojamas “Mano maršrutai” lango sąrašo gale.
 
 	\textbf{Alternatyvūs scenarijai:}
-	\begin{enumerate}
+	\begin{enumerate}[itemsep=-2mm]
 		\item Jei dėl trikdžių bandant pasiekti internetą, nepavyksta vartotojui parodyti bendrą autobusų sąrašą ar pridėti autobuso maršrutą į sekamų maršrutų sąrašą, tada vartotojui programa pateikia informacinį pranešimą, kad sistemoje įvyko klaida ir siūloma pabandyti vėliau.
 	\end{enumerate} 
 	\begin{figure}[H]
@@ -371,9 +370,9 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 	Vartotojas pagrindiniame lange paspaudžia “Open Map” ir yra nukeliamas į žemėlapio langą, kuriame rodomi visi galiojantys žymekliai.
 
 	\textbf{Alternatyvūs scenarijai:}
-	\begin{enumerate}
+	\begin{enumerate}[itemsep=-2mm]
 		\item Jei vartotojas neturi davęs sutikimo programėlei naudotis GPS, tada ji prašo prieigos prie GPS pateikdama informacijos langą.
-		\begin{enumerate}
+		\begin{enumerate}[itemsep=-2mm]
 			\item Jei vartotojas paspaudžia “Accept”, programėlei duodamas sutikimas naudotis telefono GPS ir vartotojas yra nukeliamas į žemėlapio langą, kuriame rodomi visi galiojantys žymekliai.
 			\item Jei vartotojas paspaudžia “Decline”, programa pateikia informacinį pranešimą, kad negali parodyti žemėlapio, nes vartotojas nesuteikė prieigos prie GPS.
 		\end{enumerate} 
@@ -391,9 +390,9 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 	Vartotojas pagrindiniame lange paspaudžia “Put Marker” ir yra nukeliamas į žymeklių pridėjimo langą, tada paspaudžia ant žemėlapio ir žymeklis yra padedamas toje vietoje, kur buvo paspausta.
 
 	\textbf{Alternatyvūs scenarijai:}
-	\begin{enumerate}
+	\begin{enumerate}[itemsep=-2mm]
 		\item Jei vartotojas neturi davęs sutikimo programėlei naudotis GPS, tada ji prašo prieigos prie GPS pateikdama informacijos langą.
-		\begin{enumerate}
+		\begin{enumerate}[itemsep=-2mm]
 			\item Jei vartotojas paspaudžia “Accept”, programėlei duodamas sutikimas naudotis telefono GPS ir vartotojas yra nukeliamas į žymeklių pridėjimo langą, kuriame rodomi visi galiojantys žymekliai.
 			\item Jei vartotojas paspaudžia “Decline”, programa pateikia informacinį pranešimą, kad negali parodyti žemėlapio, nes vartotojas nesuteikė prieigos prie GPS.
 		\end{enumerate} 
@@ -418,7 +417,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 	galiojančiais žymekliais. Žymeklio, gavusio 51% balsų, žyminčių, kad kontrolė žymeklio vietoje jau nebestovi, spalva yra pakeičiama į pilką.
 
 	\textbf{Alternatyvūs scenarijai:}
-	\begin{enumerate}
+	\begin{enumerate}[itemsep=-2mm]
 		\item Jei vartotojas pasirenka žymeklį, esantį toliau nei 1,5km nuo jo esamos buvimo vietos, nustatytos pagal GPS, vartotojui nėra rodomas žymeklio balsavimo langas ir jam neleidžiama balsuoti.
 		\item Jei programai nepavyksta rasti vartotojo buvimo vietos, tada vartotojui programa pateikia informacinį pranešimą, kad vartotojo buvimo vietos rasti nepavyko.
 		\item Jei vartotojas bando balsuoti už tą patį žymeklį antrą kartą, sistema jam praneša, kad jis jau balsavo anksčiau ir neįskaito vartotojo balso.
@@ -435,7 +434,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 	Administratorius pagrindiniame lange paspaudžia “Clear Markers”, tada programėlė ištrina visus žymeklius, esamus žemėlapyje.
 
 	\textbf{Alternatyvūs scenarijai:}
-	\begin{enumerate}
+	\begin{enumerate}[itemsep=-2mm]
 		\item Jei dėl trikdžių nepavykstą ištrinti bent vieno žymeklių, ištrinti žymekliai yra grąžinami į savo vietas ir programėlė informuoja administratorių informaciniu pranešimu, kad dėl trikdžių duomenų bazėje nepavyko ištrinti žymeklių ir siūloma administratoriui pabandyti vėliau.
 	\end{enumerate} 
 
@@ -447,7 +446,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 	vartotoją, kad klausimą nusiųsti pavyko.
 
 	\textbf{Alternatyvūs scenarijai:}
-	\begin{enumerate}
+	\begin{enumerate}[itemsep=-2mm]
 		\item Jei vartotojas el. pašto lauką palieka tuščią, programa informuoja vartotoją, kad klausimo nusiųsti nepavyko, nes vartotojas nepateikė savo el. pašto.
 		\item Jei vartotojo įvestas el. paštas neatitinka el. pašto formato, programa informuoja vartotoją, kad įvestas el. paštas netinkamas.
 		\item Jei vartotojas klausimo lauką palieka tuščią, programa informuoja vartotoją, kad klausimo nusiųsti nepavyko, nes vartotojas klausimo lauką paliko tuščią.
@@ -466,7 +465,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 				\label{img:matrix}
 			\end{figure}
 \section{Rastų klaidų sąrašas}
-	\begin{enumerate}
+	\begin{enumerate}[itemsep=-2mm]
 		\item Struktūriniame esybių modelyje nebuvo Maršruto esybės.
 		\item Struktūriniame esybių modelyje Filtro esybė buvo agregacijos ryšiu sujungta su žymekliu.
 		\item Struktūriniame dalykinės srities modelyje buvo naudojamos ne tik agregacijos ir generalizacijos.
@@ -482,7 +481,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 Šiame etape sukurta įvadinė verslo taisyklių logika leidžia toliau sėkmingai detalizuoti sistemos komponentus pereinant į žemesnius abstrakcijos lygius - sistemą galima skaidyti į atskirus verslo esybių modulius ir kiekvieną jų nagrinėti atskirai. Kadangi ICONIX proceso esmė - klaidinga kiekvienos iteracijos įeiga, todėl nereikia baimintis likusių neapibrėžtumų ir abstraktumo - visa tai bus detalizuota kitų laboratorinių darbų metu.
 
 \sectionnonum{Literatūros sąrašas}
-\begin{enumerate}[label={[\arabic*]}]
+\begin{enumerate}[label={[\arabic*]};itemsep=-2mm]
 	\item Doc. dr. K. Petrausko Programų Sistemų Inžinerijos kurso konspektai
 	\item Doug Rosenberg and Matt Stephens - „Use Case Driven Object Modeling with UML Theory and Practice“
 	\item UML dokumentacija \url{https://www.tutorialspoint.com/uml/uml_2_overview.htm}
