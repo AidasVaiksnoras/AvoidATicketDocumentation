@@ -88,7 +88,7 @@ Tikslas ištirti rinką galimam programėlės vystymui. Taip pat programėlės p
 
 \section{Reikalavimai}
 \subsection{Funkciniai reikalavimai }
-Šiame skyriuje pateikiami sistemos funkciniai reikalavimai, t.y. pagrindinės sistemos atliekamos funkcijos, konkretūs jų aprašymai.
+Šiame skyriuje pateikiami sistemos funkciniai reikalavimai, t.y. pagrindinės sistemos atliekamos funkcijos, konkretūs jų aprašymai. (Žr. 1 lentelė)
 
 \newcounter{frcount}
 \newcommand\rownumberfr{\stepcounter{frcount}\arabic{frcount}}
@@ -157,9 +157,9 @@ NFR\rownumber & Išmanusis renginys turi turėti GPS modulį. & Būtina\tabularn
 NFR\rownumber & Išmanusis įrenginys turi turėti prieigą prie interneto & Būtina\tabularnewline \hline
 \end{longtable}
 
-\subsubsection{Saveikos su  kitomis programomis reikalavimai}
-\begin{longtable}{ | >{\centering}m{2cm} | m{10cm} | >{\centering}m{2.5cm} | } \caption{Nefunkciniai saveikos su  kitomis programomis reikalavimai} \endhead \hline
-\multicolumn{3}{ |l| }{\textbf{Saveikos su  kitomis programomis reikalavimai:}} \tabularnewline \hline
+\subsubsection{Sąveikos su  kitomis programomis reikalavimai}
+\begin{longtable}{ | >{\centering}m{2cm} | m{10cm} | >{\centering}m{2.5cm} | } \caption{Nefunkciniai sąveikos su  kitomis programomis reikalavimai} \endhead \hline
+\multicolumn{3}{ |l| }{\textbf{Sąveikos su  kitomis programomis reikalavimai:}} \tabularnewline \hline
 \textbf{Numeris} & \centering{\textbf{Reikalavimas}} & \textbf{Svarba} \tabularnewline \hline
 NFR\rownumber & Facebook ir Google api vartotojo autorizacijai & Būtina\tabularnewline \hline
 NFR\rownumber & Aplikacija reikalauja GPS prieigos teisių. & Būtina\tabularnewline \hline
@@ -258,7 +258,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 \subsection{Užduočių aprašai}
 \subsubsection{Registracija}
 	\textbf{Pagrindinis scenarijus:}\\
-	Vartotojas įsijungia programėlę ir patenka į prisijungimo langą. Joje spaudžia mygtuką “Register” ir patenka į registracijos langą. 
+	Vartotojas įsijungia programėlę ir patenka į prisijungimo langą (žr. 5 pav.). Joje spaudžia mygtuką “Register” ir patenka į registracijos langą (žr. 4 pav.). 
 	Registracijos lange vartotojas įveda prisijungimo vardą, savo vardą, pavardę, el. paštą, slaptažodį, slaptažodį pakartoja bei paspaudžia 
 	“Create my account”. Anketa sėkmingai sukuriama, vartojo įvesti duomenys išsaugomi duomenų bazėje ir vartotojas perkeliamas į prisijungimo langą.
 
@@ -282,7 +282,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 
 \subsubsection{Prisijungimas}
 	\textbf{Pagrindinis scenarijus:}\\
-	Vartotojas įsijungia programėlę ir patenka į prisijungimo langą. Prisijungimo lange įveda savo prisijungimo vardą ir slaptažodį, 
+	Vartotojas įsijungia programėlę ir patenka į prisijungimo langą (žr. 5 pav.). Prisijungimo lange įveda savo prisijungimo vardą ir slaptažodį, 
 	spaudžia mygtuką “Login”, prisijungia ir yra perkeliamas į pagrindinį langą.
 	
 	\textbf{Alternatyvūs scenarijai:}
@@ -304,7 +304,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 \subsubsection{Profilio duomenų redagavimas}
 	\textbf{Pagrindinis scenarijus:}\\
 	Vartotojas pagrindiniame lange spaudžia mygtuką, ant kurio parašytas jo vardas ir pavardė, ir tada patenka į profilio 
-	redagavimo langą. Ten iš el. pašto, slaptažodžio, vardo, pavardės laukų paspaudžia ant vardo lauko ir įveda naują vardą. 
+	redagavimo langą (žr. 6 pav.). Ten iš el. pašto, slaptažodžio, vardo, pavardės laukų paspaudžia ant vardo lauko ir įveda naują vardą. 
 	Tada paspaudžia mygtuką “Save” ir pakeisti duomenys išsaugomi duomenų bazėje. Vartotojas apie tai informuojamas informaciniu pranešimu. 
 	Pakeitęs duomenis, vartotojas paspaudžia mygtuką “Back” ir grįžtą į pagrindinį langą.
 
@@ -326,7 +326,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 			\end{figure}
 \subsubsection{Komentaro apie žymeklį pridėjimas}
 	\textbf{Pagrindinis scenarijus:}\\
-    Vartotojas paspaudžia ant žymeklio, sistema jį nukelia į žymeklio informacijos langą. Vartotojas žymeklio informacijos lange 
+    Vartotojas paspaudžia ant žymeklio, sistema jį nukelia į žymeklio informacijos langą (žr. 7 pav.). Vartotojas žymeklio informacijos lange 
 	įrašo komentarą į tam skirtą laukelį, spaudžia “Siųsti”. Sistema įrašo komentarą apie žymeklį į duomenų bazę. Sistema 
 	atvaizduoja komentarą komentarų sąrašo viršuje.
 
@@ -343,7 +343,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 
 \subsubsection{Maršruto pridėjimas į sekamų sąrašą}
 	\textbf{Pagrindinis scenarijus:}\\
-	Vartotojas lange “Mano maršrutai” spaudžia “+” ir sistema atidaro bendrą miesto autobusų sąrašą, kuriame neįtraukti 
+	Vartotojas lange “Mano maršrutai” (žr. 8 pav.) spaudžia “+” ir sistema atidaro bendrą miesto autobusų sąrašą, kuriame neįtraukti 
 	vartotojo jau anksčiau pažymėti autobusai, kurių maršrutai įtraukti į sekamų sąrašą. Vartotojas paspaudžia ant jį 
 	dominančio autobuso sąrašo elemento iš bendro miesto autobusų sąrašo, tada sistema įtraukia pasirinktą autobuso maršrutą 
 	į vartotojo sekamų maršrutų sąrašą. Sistema parodo pranešimą pranešimų srityje “Autobuso {autobusas} maršrutas sėkmingai 
@@ -367,7 +367,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 
 \subsubsection{Žemėlapio ir jame esančių žymeklių peržiūra}
 	\textbf{Pagrindinis scenarijus:}\\
-	Vartotojas pagrindiniame lange paspaudžia “Open Map” ir yra nukeliamas į žemėlapio langą, kuriame rodomi visi galiojantys žymekliai.
+	Vartotojas prisijungęs patenka į pagrindinį langą (žr. 9 pav.), kuriame rodomi visi galiojantys žymekliai.
 
 	\textbf{Alternatyvūs scenarijai:}
 	\begin{enumerate}[itemsep=-2mm]
@@ -382,12 +382,12 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 				\centering
 				\includegraphics[scale=0.6]{img/mockup_Main_Window}
 				\caption{Pagrindinis langas}
-				\label{img:Pagrindinis langas}
+				\label{img:Žemėlapio langas}
 			\end{figure}
 
 \subsubsection{Žemėlapio redagavimas. Žymeklių pridėjimas}
 	\textbf{Pagrindinis scenarijus:}\\
-	Vartotojas pagrindiniame lange paspaudžia “Put Marker” ir yra nukeliamas į žymeklių pridėjimo langą, tada paspaudžia ant žemėlapio ir žymeklis yra padedamas toje vietoje, kur buvo paspausta.
+	Vartotojas pagrindiniame lange paspaudžia “Put Marker” ir yra nukeliamas į žymeklių pridėjimo langą (žr. 10 pav.), tada paspaudžia ant žemėlapio ir žymeklis yra padedamas toje vietoje, kur buvo paspausta.
 
 	\textbf{Alternatyvūs scenarijai:}
 	\begin{enumerate}[itemsep=-2mm]
@@ -414,7 +414,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 	sistema išsaugoja vartotojo balsą duomenų bazėje, žymintį, kad kontrolė pasitraukė iš pasirinkto žymeklio vietos. Jei kontrolė žymeklio 
 	vietoje vis dar stovi, vartotojas paspaudžia mygtuką “Dar stovi” ir sistema išsaugo vartotojo balsą duomenų bazėje, patvirtinantį, kad 
 	kontrolė dar yra pasirinkto žymeklio vietoje. Vartotojas, atidavęs savo balsą, yra perkeliamas į bendrą žemėlapio langą su visais 
-	galiojančiais žymekliais. Žymeklio, gavusio 51% balsų, žyminčių, kad kontrolė žymeklio vietoje jau nebestovi, spalva yra pakeičiama į pilką.
+	galiojančiais žymekliais. Žymeklio, gavusio 51 procentų balsų, žyminčių, kad kontrolė žymeklio vietoje jau nebestovi, spalva yra pakeičiama į pilką.
 
 	\textbf{Alternatyvūs scenarijai:}
 	\begin{enumerate}[itemsep=-2mm]
@@ -440,7 +440,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 
 \subsubsection{Susisiekimas su administracija}
 	\textbf{Pagrindinis scenarijus:}\\
-	Vartotojas pagrindiniame lange paspaudžia “FAQ | Ask a question” ir patenka į D.U.K. langą. D.U.K lange vartotojas 
+	Vartotojas pagrindiniame lange paspaudžia “FAQ | Ask a question” ir patenka į D.U.K. langą (žr. 12 pav.). D.U.K lange vartotojas 
 	spaudžia “Ask a question” mygtuką ir patenka į klausimo uždavimo langą. Klausimo uždavimo lange vartotojas įveda 
 	savo el. paštą ir klausimą bei spaudžia “Send us the question”. Klausimas nusiunčiamas sėkmingai, o programa informuoja 
 	vartotoją, kad klausimą nusiųsti pavyko.
