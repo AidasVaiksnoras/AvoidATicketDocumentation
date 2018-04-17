@@ -1,5 +1,5 @@
 generuoti:
-	xelatex AvoidATicketI.tex
+	xelatex AvoidATicketII.tex
 	biber AvoidATicket
 
 ubuntu:
