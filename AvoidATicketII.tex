@@ -436,17 +436,17 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 	\textbf{Pagrindinis scenarijus:}\\
 	Vartotojas pagrindiniame lange paspaudžia “Open Map” ir yra nukeliamas į žemėlapio langą, kuriame rodomi visi galiojantys žymekliai. 
 	Vartotojas paspaudžia ant pasirinkto galiojančio žymeklio, kuris yra ne toliau nei 1,5km nuo jo dabartinės padėties ir yra nukeliamas 
-	į žymeklio balsavimo langą. Jei kontrolė vartotojo pasirinkto žymeklio vietoje jau nebestovi, vartotojas paspaudžia mygtuką “Nestovi”, 
-	sistema išsaugoja vartotojo balsą duomenų bazėje, žymintį, kad kontrolė pasitraukė iš pasirinkto žymeklio vietos. Jei kontrolė žymeklio 
-	vietoje vis dar stovi, vartotojas paspaudžia mygtuką “Dar stovi” ir sistema išsaugo vartotojo balsą duomenų bazėje, patvirtinantį, kad 
+	į žymeklio balsavimo langą. 
+	Kontrolė žymeklio vietoje vis dar stovi, todėl vartotojas paspaudžia mygtuką “Dar stovi” ir sistema išsaugo vartotojo balsą duomenų bazėje, patvirtinantį, kad 
 	kontrolė dar yra pasirinkto žymeklio vietoje. Vartotojas, atidavęs savo balsą, yra perkeliamas į bendrą žemėlapio langą su visais 
-	galiojančiais žymekliais. Žymeklio, gavusio 51% balsų, žyminčių, kad kontrolė žymeklio vietoje jau nebestovi, spalva yra pakeičiama į pilką.
+	galiojančiais žymekliais. Žymeklio, gavusio 51\% balsų, žyminčių, kad kontrolė žymeklio vietoje jau nebestovi, spalva yra pakeičiama į pilką.
 
 	\textbf{Alternatyvūs scenarijai:}
 	\begin{enumerate}[itemsep=-2mm]
 		\item Jei vartotojas pasirenka žymeklį, esantį toliau nei 1,5km nuo jo esamos buvimo vietos, nustatytos pagal GPS, vartotojui nėra rodomas žymeklio balsavimo langas ir jam neleidžiama balsuoti.
 		\item Jei programai nepavyksta rasti vartotojo buvimo vietos, tada vartotojui programa pateikia informacinį pranešimą, kad vartotojo buvimo vietos rasti nepavyko.
 		\item Jei vartotojas bando balsuoti už tą patį žymeklį antrą kartą, sistema jam praneša, kad jis jau balsavo anksčiau ir neįskaito vartotojo balso.
+		\item Jei kontrolė vartotojo pasirinkto žymeklio vietoje jau nebestovi, vartotojas paspaudžia mygtuką “Nestovi”. Sistema išsaugoja vartotojo balsą duomenų bazėje, žymintį, kad kontrolė pasitraukė iš pasirinkto žymeklio vietos.
 	\end{enumerate} 
 	\begin{figure}[H]
 				\centering
@@ -546,6 +546,7 @@ versiją ir ja pakeisti senesnę.
 		\item Nebuvo funkcinio reikalavimo vartotojo galimybei pasirinkti maršrutą ir tikrinti stoteles pagal jį.
 		\item Nebuvo funkcinio reikalavimo vartotojo galimybei filtruoti matomus žymeklius pagal pasirinktą maršrutą.
 		\item Netiksliai aprašytas poreikis, kokiu atstumu nuo vartotojo buvimo vietos, jis gali padėti žymeklį.
+		\item Neteisingai aprašytas scenarijus “Žemėlapio redagavimas. Vartotojų balsavimas dėl žymeklio teisingumo”
 	\end{enumerate}
 \sectionnonum{Išvada}
 Šiame etape sukurta įvadinė verslo taisyklių logika leidžia toliau sėkmingai detalizuoti sistemos komponentus pereinant į žemesnius abstrakcijos lygius - sistemą galima skaidyti į atskirus verslo esybių modulius ir kiekvieną jų nagrinėti atskirai. Kadangi ICONIX proceso esmė - klaidinga kiekvienos iteracijos įeiga, todėl nereikia baimintis likusių neapibrėžtumų ir abstraktumo - visa tai bus detalizuota kitų laboratorinių darbų metu.
