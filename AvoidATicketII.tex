@@ -41,7 +41,7 @@
 \maketitle
 
 \sectionnonum{Anotacija}
-Dokumente pateikiamas ICONIX programų kūrimo proceso pirmojo etapo aprašas, kuriame aprašoma statinė programos struktūra, išreikšta supaprastinta klasių diagrama, kurioje yra tik agregacijos ir generalizacijos ryšiai, ir panaudojamumo atvejų tekstai, nurodantys, kaip sistema turi funkcionuoti. Šiame etape pateikiamas projektuojamos sistemos modelis tebėra verslo abstrakcijų lygmenyje, todėl išreikštų sistemos dalių (atributų, metodų, kitų sąveikos elementų) čia nenurodoma.
+Šis dokumentas skirtas Vilniaus universiteto Programų sistemų 2 kurso Programų sistemų inžinerijos II modulio pirmąjam (reikalavimai ir ICONIX užduočių tekstai, sąsajos maketai ) ir antrąjam(robastiškumo diagramos, preliminari peržiūra, techninė architektūra) iš trijų laboratorinių darbų atlikti.
 
 \tableofcontents
 
@@ -214,7 +214,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 \subsection{Esybių diagrama}
 	\begin{figure}[H]
 				\centering
-				\includegraphics[scale=0.6]{img/esybiu_diagrama}
+				\includegraphics[scale=0.6]{img/esybiu_diagrama2}
 				\caption{Esybių diagrama}
 				\label{img:Esybių diagrama}
 			\end{figure}
@@ -227,8 +227,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 			\end{figure}
 
 \subsection{Žodynas}
-				\renewcommand{\labelitemi}{$\bullet$}
-				\begin{itemize}[itemsep=-2mm]
+				\begin{enumerate}[label=E\arabic*,itemsep=-2mm]
 					\item \textit{Vartotojas} - klientas, prisiregistravęs prie aplikacijos.
 					\item \textit{Neprisijungęs vartotojas} - vartotojas, kuris nėra atlikęs prisijungimo procedūros programėlėje ir neturi galiojančios prisijungimo sesijos.
 					\item \textit{Prisijungęs vartotojas} - vartotojas, sėkmingai atlikęs prisijungimo procedūrą programėlėje ir turintis galiojančią prisijungimo sesiją.
@@ -246,7 +245,20 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 					\item \textit{Keleivių kontrolė} - kontrolieriai, tikrinantys, ar keleiviai turi galiojančius ir tinkamos nuolaidų grupės bilietus
 					\item \textit{Programėlė} - aplikacija, kurioje vartotojas gali pamatyti ar pažymėti žemėlapių vietas, kuriose yra keleivių kontrolė.
 					\item \textit{Facebook} - socialinis tinklas “Facebook”.
-				\end{itemize}
+				\end{enumerate}
+\subsection{Vartotojo Sąsajos Langai}
+				\begin{enumerate}[label=VSL\arabic*,itemsep=-2mm]
+					\item \textit{Prisijungimo langas} - programėlės langas, į kurį patenka naujas vartotojas, ją parsisiuntęs. Šiame lange taip pat yra nuoroda į registracijos langą ir prisijungimą per Facebook API.
+					\item \textit{Registracijos langas} - programėlės langas, kuriame vartotojas suveda savo registracijos duomenis: vardą, pavardę, prisijungimo vardą, slaptažodį, el. paštą ir užbaigia registraciją.
+					\item \textit{Pagrindinis langas} - tai pradinis langas, į kurį patenka prisijungęs vartotojas. Šiame lange matomas žemėlapis, GPS įrenginio pagalba jame sucentruota vartotojo buvimo vieta ir tame regione esantys žymekliai, jei jų yra.
+					\item \textit{Profilio redagavimo langas} - tai langas, kuriame vartotojas gali pakeisti asmeninius duomenis, tokius kaip: vartotojo vardą, vardą ir pavardę, slaptažodį, el. paštą.
+					\item \textit{Žymeklio informacinis langas} - langas, kuriame vartotojas mato visą informaciją apie pasirinktą konkretų žymeklį: žymeklį padėjusio vartotojo komentaras, kitų vartotojų komentarai, žemėlapio vieta, kurioje padėtas žymeklis. Taip pat vartotojas šiame lange gali palikti savo komentarą, balsuoti dėl žymeklio teisingumo. 
+					\item \textit{“My favourite routes” langas} - tai vartotojo sekamų miesto autobusų maršrutų sąrašo langas, kuriame jis gali įtraukti iš sąrašo naujus sekamus maršrutus.
+					\item \textit{Stotelių paieškos langas} - tai langas, į kurį vartotojas patenka Pagrindiniame lange paspaudęs mygtuką “Place marker”. Šiame lange vartotojas gali pasirinkti stotelę iš sąrašo.
+					\item \textit{Žymeklio pridėjimo langas} -  tai langas, kuriame vartotojas, įvedęs komentarą apie žymeklį, jį prideda į sistemą.
+					\item \textit{D.U.K. langas} - tai langas, į kurį varototjas patenka paspaudęs informacinę ikoną Pagrindiniame lange. Šiame lange yra surašyti visi dažniausiai užduodami klausimai ir atsakymai į juos.
+					\item \textit{Klausimo uždavimo langas} - tai langas, į kurį vartotojas patenka iš D.U.K. lango ir kuriame įvedus klausimą į formą ir el. pašto adresą, galima išsiųsti klausimą administracijai.
+				\end{enumerate}
 \subsection{Užduotys}
 	\begin{figure}[H]
 				\centering
@@ -256,6 +268,8 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 			\end{figure}
 
 \subsection{Užduočių aprašai}
+\label{sec:Užduočių aprašai}
+Skyriuje \ref{sec:Užduočių aprašai} pateikti užduočių aprašai.
 \subsubsection{Registracija}
 	Šiame skyriuje aprašomas vartotojo registracijos procesas, kuris yra schematizuotas robastiškumo diagramoje (žr. \ref{img:Registracijos robustiškumo diagrama} pav.). 
 	Procesą iliustruoja registracijos lango maketas (žr. \ref{img:registracija} pav.).
@@ -321,46 +335,65 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 			\end{figure}
 
 \subsubsection{Profilio duomenų redagavimas}
+	Šiame skyriuje aprašomas vartotojo profilio duomenų redagavimo procesas, kuris yra schematizuotas robastiškumo diagramoje (žr. \ref{img:profilio redagavimas RD} pav.). 
+	Procesą iliustruoja profilio duomenų redagavimo lango maketas (žr. \ref{img:profilio redagavimas} pav.).
+
 	\textbf{Pagrindinis scenarijus:}\\
-	Vartotojas pagrindiniame lange spaudžia mygtuką, ant kurio parašytas jo vardas ir pavardė, ir tada patenka į profilio 
-	redagavimo langą. Ten iš el. pašto, slaptažodžio, vardo, pavardės laukų paspaudžia ant vardo lauko ir įveda naują vardą. 
-	Tada paspaudžia mygtuką “Save” ir pakeisti duomenys išsaugomi duomenų bazėje. Vartotojas apie tai informuojamas informaciniu pranešimu. 
-	Pakeitęs duomenis, vartotojas paspaudžia mygtuką “Back” ir grįžtą į pagrindinį langą.
+	Vartotojas pagrindiniame lange spaudžia mygtuką, ant kurio parašytas jo vardas ir pavardė, ir tada patenka į profilio redagavimo langą. Ten iš el. pašto, slaptažodžio, vardo, pavardės laukų paspaudžia ant norimos pakeisti reikšmės lauko ir įveda naują reikšmę.Tada paspaudžia mygtuką “Save” ir pakeisti duomenys sistemos išsaugomi duomenų bazėje. Vartotojas apie tai informuojamas informaciniu pranešimu. Pakeitęs duomenis, vartotojas paspaudžia mygtuką “Back” ir grįžtą į pagrindinį langą.
 
 	\textbf{Alternatyvūs scenarijai:}
 	\begin{enumerate}[itemsep=-2mm]
 		\item Jei įvestame slaptažodyje nėra skaičiaus ar didžiosios raidės, arba jis yra trumpesnis nei 5 simboliai, tada vartotojui programa pateikia informacinį pranešimą, kad slaptažodis netinkamas, jame privalo būti didžioji raidė ir skaičius ir kad jį turi sudaryti bent 5 simboliai.
 		\item Jei vartotojo įvestas prisijungimo vardas duomenų bazėje jau egzistuoja, tada vartotojui programa pateikia informacinį pranešimą, kad prisijungimo vardas netinkamas, nes jau yra vartotojas su tokiu prisijungimo vardu.
-		\item Jei vartotojo įvestame prisijungimo varde nėra 5 simbolių, programa pateikia informacinį pranešimą, kad prisijungimo vardas netinkamas, nes jame turi būti bent 5 simboliai.
+		\item Jei vartotojo įvestame prisijungimo varde nėra 5 simbolių arba yra specialiųjų simbolių, programa pateikia informacinį pranešimą, kad prisijungimo vardas netinkamas, nes jame turi būti bent 5 simboliai ir jame negali būti jokių specialiųjų simbolių.
 		\item Jei vartotojo įvestas el. paštas neatitinka el. pašto formato, programa informuoja vartotoją, kad įvestas el. paštas netinkamas.
 		\item Jei vartotojo įvestas prisijungimo vardas yra per ilgas, tada vartotojui programa pateikia informacinį pranešimą, kad prisijungimo vardas netinkamas, nes prisijungimo vardas negali būti ilgesnis nei 15 simbolių eilutė.
 		\item Jei  vartotojo įvestas slaptažodis yra per ilgas, tada vartotojui programa pateikia informacinį pranešimą, kad slaptažodis netinkamas, nes slaptažodis negali būti ilgesnis nei 20 simbolių eilutė.
 		\item Jei dėl trikdžių duomenų bazėje vartotojui pakeisti duomenų nepavyksta, tada vartotojui programa pateikia informacinį pranešimą, kad sistemoje įvyko klaida ir siūloma pabandyti prisiregistruoti vėliau.
+		\item Vartotojas keičia slaptažodžio lauką, po pakeitimo slaptažodžio lauko ir slaptažodžio patvirtinimo lauko reikšmės nesutampa, jis spaudžia “Save” mygtuką, sistema atvaizduoja informacinį pranešimą, jog slaptažodžiai nesutampa, dėl to pakeitimai neįvykdyti.
 	\end{enumerate} 
+		\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.55]{img/Profilio_duomenų_keitimo_RD}
+				\caption{Profilio redagavimo robustiškumo diagrama}
+				\label{img:profilio redagavimas RD}
+			\end{figure}
 	\begin{figure}[H]
 				\centering
 				\includegraphics[scale=0.55]{img/mockup_profileedit}
 				\caption{Profilio redagavimas}
 				\label{img:profilio redagavimas}
 			\end{figure}
+
 \subsubsection{Komentaro apie žymeklį pridėjimas}
+	Šiame skyriuje aprašomas komentaro apie žymeklį pridėjimo procesas, kuris yra schematizuotas robastiškumo diagramoje (žr. \ref{img:Žymeklio informacijos langas RD} pav.). 
+	Procesą iliustruoja komentaro apie žymeklį pridėjimo lango maketas (žr. \ref{img:Žymeklio informacijos langas1} pav.).
+
 	\textbf{Pagrindinis scenarijus:}\\
-    Vartotojas paspaudžia ant žymeklio, sistema jį nukelia į žymeklio informacijos langą. Vartotojas žymeklio informacijos lange 
-	įrašo komentarą į tam skirtą laukelį, spaudžia “Siųsti”. Sistema įrašo komentarą apie žymeklį į duomenų bazę. Sistema 
-	atvaizduoja komentarą komentarų sąrašo viršuje.
+    Vartotojas paspaudžia ant žymeklio, sistema jį nukelia į žymeklio informacijos langą. Vartotojas žymeklio informacijos lange įrašo komentarą į tam skirtą laukelį, spaudžia “Add Comment”. Sistema įrašo komentarą apie žymeklį į duomenų bazę. Sistema atvaizduoja komentarą komentarų sąrašo viršuje. Šiame lange vartotojas taip pat balsuoja: suteikia arba numuša reitinga žymekliui.
 
 	\textbf{Alternatyvūs scenarijai:}
 	\begin{enumerate}[itemsep=-2mm]
 		\item Jei dėl trikdžių bandant pasiekti internetą, nepavyksta į duomenų bazę įrašyti vartotojo komentaro, tada vartotojui programa pateikia informacinį pranešimą, kad sistemoje įvyko klaida ir siūloma pabandyti vėliau.
+		\item Vartotojas neįrašo jokio teksto į tam skirtą komentavimo laukelį ir spaudžia “Add Comment”, sistema išmeta informacinį pranešimą, jog komentaro palikti nepavyko, nes komentaro laukas tuščias.
 	\end{enumerate} 
+		\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.6]{img/komentaro_apie_zymekli_pridejimas}
+				\caption{Žymeklio informacijos lango robustiškumo diagrama}
+				\label{img:Žymeklio informacijos langas RD}
+			\end{figure}
 	\begin{figure}[H]
 				\centering
 				\includegraphics[scale=0.6]{img/mockup_markerInfoWindow}
 				\caption{Žymeklio informacijos langas}
-				\label{img:Žymeklio informacijos langas}
+				\label{img:Žymeklio informacijos langas1}
 			\end{figure}
 
 \subsubsection{Maršruto pridėjimas į sekamų sąrašą}
+	Šiame skyriuje aprašomas maršruto pridėjimo į sekamų sąrašą procesas, kuris yra schematizuotas robastiškumo diagramoje (žr. \ref{img:Maršruto pridėjimo langas RD} pav.). 
+	Procesą iliustruoja maršruto pridėjimo į sekamų sąrašą lango maketas (žr. \ref{img:Maršruto pridėjimo langas} pav.).
+	
 	\textbf{Pagrindinis scenarijus:}\\
 	Vartotojas lange “Mano maršrutai” spaudžia “+” ir sistema atidaro bendrą miesto autobusų sąrašą, kuriame neįtraukti 
 	vartotojo jau anksčiau pažymėti autobusai, kurių maršrutai įtraukti į sekamų sąrašą. Vartotojas paspaudžia ant jį 
@@ -373,6 +406,12 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 	\begin{enumerate}[itemsep=-2mm]
 		\item Jei dėl trikdžių bandant pasiekti internetą, nepavyksta vartotojui parodyti bendrą autobusų sąrašą ar pridėti autobuso maršrutą į sekamų maršrutų sąrašą, tada vartotojui programa pateikia informacinį pranešimą, kad sistemoje įvyko klaida ir siūloma pabandyti vėliau.
 	\end{enumerate} 
+		\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.5]{img/marsruto_pridejimas_i_sekamu_sarasa}
+				\caption{Maršruto pridėjimo lango robustiškumo diagrama}
+				\label{img:Maršruto pridėjimo langas RD}
+			\end{figure}
 	\begin{figure}[H]
 				\centering
 				\includegraphics[scale=1.5]{img/mockup_AddRoute}
@@ -381,8 +420,9 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 			\end{figure}
 
 \subsubsection{Atsijungimas}
-	Šiame skyriuje aprašomas vartotojo atsijungimo nuo aplikacijos procesas, kuris yra schematizuotas robastiškumo diagramoje (žr. \ref{img:Atsijungimo robustiškumo diagrama} pav.).\\
-	\textbf{Pagrindinis scenarijus:}\\
+	Šiame skyriuje aprašomas vartotojo atsijungimo nuo aplikacijos procesas, kuris yra schematizuotas robastiškumo diagramoje (žr. \ref{img:Atsijungimo robustiškumo diagrama} pav.).
+	
+	\textbf{Pagrindinis scenarijus:}
 	Vartotojas pagrindiniame lange paspaudžia “Log Off”, sistema jį atjungia ir vartotojas yra nukeliamas į prisijungimo langą.
 		\begin{figure}[H]
 				\centering
@@ -392,18 +432,27 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 			\end{figure}
 
 \subsubsection{Žemėlapio ir jame esančių žymeklių peržiūra}
-	\textbf{Pagrindinis scenarijus:}\\
-	Vartotojas pagrindiniame lange paspaudžia “Open Map” ir yra nukeliamas į žemėlapio langą, kuriame rodomi visi galiojantys žymekliai.
+	Šiame skyriuje aprašomas žymeklių peržiūros procesas, kuris yra schematizuotas robastiškumo diagramoje (žr. \ref{img:Žemėlapio redagavimas. Žymeklių peržiūra} pav.). 
+	Procesą iliustruoja žymeklių peržiūros lango maketas (žr. \ref{img:Pagrindinis langas} pav.).
 
+	\textbf{Pagrindinis scenarijus:}\\
+	Vartotojas prisijungęs prie programėlės patenka į pagrindinį langą, kuriame matomas žemėlapis ir visi galiojantys žymekliai (šauktuko metafora, žr. Sąsajos Lange). Paspaudęs ant žymeklio vartotojas mato stotelės pavadinimą, kurioje stovi kontrolė, taip pat kiek laiko praėjo nuo žymeklio padėjimo laiko. Programėlės pagrindinio lango apačioje vartotojas mato žymeklio reitingą.
+	
 	\textbf{Alternatyvūs scenarijai:}
 	\begin{enumerate}[itemsep=-2mm]
-		\item Jei vartotojas neturi davęs sutikimo programėlei naudotis GPS, tada ji prašo prieigos prie GPS pateikdama informacijos langą.
+		\item Jei vartotojas neturi davęs sutikimo programėlei naudotis GPS, tada ji prašo prieigos prie GPS pateikdama GPS prieigos dialogo langą. 
 		\begin{enumerate}[itemsep=-2mm]
 			\item Jei vartotojas paspaudžia “Accept”, programėlei duodamas sutikimas naudotis telefono GPS ir vartotojas yra nukeliamas į žemėlapio langą, kuriame rodomi visi galiojantys žymekliai.
-			\item Jei vartotojas paspaudžia “Decline”, programa pateikia informacinį pranešimą, kad negali parodyti žemėlapio, nes vartotojas nesuteikė prieigos prie GPS.
+			\item Jei vartotojas paspaudžia “Decline”, programa pateikia informacinį pranešimą, kad negali parodyti žemėlapio, nes vartotojas nesuteikė prieigos prie GPS. Vartotojas išjungia šį pranešimą ir programėlė išsijungia.
 		\end{enumerate} 
 		\item Jei programai nepavyksta rasti vartotojo buvimo vietos, tada vartotojui programa pateikia informacinį pranešimą, kad vartotojo buvimo vietos rasti nepavyko.
 	\end{enumerate} 
+		\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.6]{img/Žemėlapio_redagavimas}
+				\caption{Žemėlapio peržiūros robustiškumo diagrama}
+				\label{img:Žemėlapio redagavimas. Žymeklių peržiūra}
+			\end{figure}
 	\begin{figure}[H]
 				\centering
 				\includegraphics[scale=0.6]{img/mockup_Main_Window}
@@ -412,12 +461,15 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 			\end{figure}
 
 \subsubsection{Žemėlapio redagavimas. Žymeklių pridėjimas}
+	Šiame skyriuje aprašomas žymeklių pridėjimo procesas, kuris yra schematizuotas robastiškumo diagramoje (žr. \ref{img:Žymeklio pridėjimo langas RD} pav.). 
+	Procesą iliustruoja žymeklių pridėjimo lango maketas (žr. \ref{img:Žymeklio pridėjimo langas RD} pav.).
+
 	\textbf{Pagrindinis scenarijus:}\\
-	Vartotojas pagrindiniame lange paspaudžia “Put Marker” ir yra nukeliamas į žymeklių pridėjimo langą, tada paspaudžia ant žemėlapio ir žymeklis yra padedamas toje vietoje, kur buvo paspausta.
+	Vartotojas pagrindiniame lange paspaudžia “Place Marker” ir yra nukeliamas į stotelių paieškos langą, kuriame matomas stotelių sąrašas. Vartotojas pasirenka stotelę iš sąrašo arba randa stotelę paieškos lauke įvedęs stotelės pavadinimo fragmentą ir yra nukeliamas į žymeklio pridėjimo langą, kuriame matomas žemėlapio fragmentas, stotelės pavadinimas, link kokios pusės važiuojant stovi kontrolė. Vartotojas palieka komentarą ir paspaudžia „Confirm”, tuomet sistema prideda žymeklį į atitinkamą vietą žemėlapyje.
 
 	\textbf{Alternatyvūs scenarijai:}
 	\begin{enumerate}[itemsep=-2mm]
-		\item Jei vartotojas neturi davęs sutikimo programėlei naudotis GPS, tada ji prašo prieigos prie GPS pateikdama informacijos langą.
+		\item Jei vartotojas neturi davęs sutikimo programėlei naudotis GPS, tada ji prašo prieigos prie GPS pateikdama informacijos langą. 
 		\begin{enumerate}[itemsep=-2mm]
 			\item Jei vartotojas paspaudžia “Accept”, programėlei duodamas sutikimas naudotis telefono GPS ir vartotojas yra nukeliamas į žymeklių pridėjimo langą, kuriame rodomi visi galiojantys žymekliai.
 			\item Jei vartotojas paspaudžia “Decline”, programa pateikia informacinį pranešimą, kad negali parodyti žemėlapio, nes vartotojas nesuteikė prieigos prie GPS.
@@ -425,6 +477,12 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 		\item Jei programai nepavyksta rasti vartotojo buvimo vietos, tada vartotojui programa pateikia informacinį pranešimą, kad vartotojo buvimo vietos rasti nepavyko.
 		\item Jei vartotojas bando padėti žymeklį vietoje, kuri yra nutolusi daugiau nei 1.5 km nuo vartotojo, tada vartotojui programa pateikia informacinį pranešimą, kad vartotojas negali dėti žymeklių vietose, nutolusiose nuo vartotojo per daugiau nei 1.5 km.
 	\end{enumerate} 
+		\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.5]{img/zymeklio_pridejimas}
+				\caption{Žymeklio pridėjimo robustiškumo diagrama}
+				\label{img:Žymeklio pridėjimo langas RD}
+			\end{figure}
 	\begin{figure}[H]
 				\centering
 				\includegraphics[scale=0.2]{img/mockup_AddMarker}
@@ -433,21 +491,24 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 			\end{figure}
 
 \subsubsection{Žemėlapio redagavimas. Vartotojų balsavimas dėl žymeklio teisingumo}
-	\textbf{Pagrindinis scenarijus:}\\
-	Vartotojas pagrindiniame lange paspaudžia “Open Map” ir yra nukeliamas į žemėlapio langą, kuriame rodomi visi galiojantys žymekliai. 
-	Vartotojas paspaudžia ant pasirinkto galiojančio žymeklio, kuris yra ne toliau nei 1,5km nuo jo dabartinės padėties ir yra nukeliamas 
-	į žymeklio balsavimo langą. 
-	Kontrolė žymeklio vietoje vis dar stovi, todėl vartotojas paspaudžia mygtuką “Dar stovi” ir sistema išsaugo vartotojo balsą duomenų bazėje, patvirtinantį, kad 
-	kontrolė dar yra pasirinkto žymeklio vietoje. Vartotojas, atidavęs savo balsą, yra perkeliamas į bendrą žemėlapio langą su visais 
-	galiojančiais žymekliais. Žymeklio, gavusio 51\% balsų, žyminčių, kad kontrolė žymeklio vietoje jau nebestovi, spalva yra pakeičiama į pilką.
+	Šiame skyriuje aprašomas vartotojų balsavimo dėl žymeklio teisingumo procesas, kuris yra schematizuotas robastiškumo diagramoje (žr. \ref{img:Žymeklio informacijos RD} pav.). 
+	Procesą iliustruoja balsavimo dėl žymeklio teisingumo lango maketas (žr. \ref{img:Žymeklio informacijos langas} pav.).
 
+	\textbf{Pagrindinis scenarijus:}\\
+	Vartotojas pagrindiniame lange paspaudžia ant pasirinkto galiojančio žymeklio, kuris yra ne toliau nei 1,5km nuo jo dabartinės padėties ir yra nukeliamas į žymeklio balsavimo langą. Jei kontrolė vartotojo pasirinkto žymeklio vietoje jau nebestovi, vartotojas paspaudžia mygtuką “Downvote”, sistema išsaugoja vartotojo balsą duomenų bazėje, žymintį, kad kontrolė pasitraukė iš pasirinkto žymeklio vietos. Jei kontrolė žymeklio vietoje vis dar stovi, vartotojas paspaudžia mygtuką “Upvote” ir sistema išsaugo vartotojo balsą duomenų bazėje, patvirtinantį, kad kontrolė dar yra pasirinkto žymeklio vietoje. Vartotojas, atidavęs savo balsą, yra perkeliamas į bendrą žemėlapio langą su visais galiojančiais žymekliais. Žymeklio, gavusio 51% balsų, žyminčių, kad kontrolė žymeklio vietoje jau nebestovi, pasitikėjimo reitingas yra pakeičiamas į „Not Trusted“.
+	
 	\textbf{Alternatyvūs scenarijai:}
 	\begin{enumerate}[itemsep=-2mm]
 		\item Jei vartotojas pasirenka žymeklį, esantį toliau nei 1,5km nuo jo esamos buvimo vietos, nustatytos pagal GPS, vartotojui nėra rodomas žymeklio balsavimo langas ir jam neleidžiama balsuoti.
 		\item Jei programai nepavyksta rasti vartotojo buvimo vietos, tada vartotojui programa pateikia informacinį pranešimą, kad vartotojo buvimo vietos rasti nepavyko.
 		\item Jei vartotojas bando balsuoti už tą patį žymeklį antrą kartą, sistema jam praneša, kad jis jau balsavo anksčiau ir neįskaito vartotojo balso.
-		\item Jei kontrolė vartotojo pasirinkto žymeklio vietoje jau nebestovi, vartotojas paspaudžia mygtuką “Nestovi”. Sistema išsaugoja vartotojo balsą duomenų bazėje, žymintį, kad kontrolė pasitraukė iš pasirinkto žymeklio vietos.
 	\end{enumerate} 
+		\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.6]{img/vartotoju_balsavimas_del_zymeklio_teisingumo}
+				\caption{Žymeklio informacijos robustiškumo diagrama}
+				\label{img:Žymeklio informacijos RD}
+			\end{figure}
 	\begin{figure}[H]
 				\centering
 				\includegraphics[scale=0.6]{img/mockup_markerInfoWindow}
@@ -455,16 +516,28 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 				\label{img:Žymeklio informacijos langas}
 			\end{figure}
 
-\subsubsection{Žemėlapio redagavimas. Žymeklių trynimas}
+\subsubsection{Žemėlapio redagavimas. Administratoriaus žymeklių trynimas}
+	Šiame skyriuje aprašomas žemėlapio radagavimo procesas, kuris yra schematizuotas robastiškumo diagramoje (žr. \ref{img:Žymeklio radagavimo langas} pav.).
+
 	\textbf{Pagrindinis scenarijus:}\\
 	Administratorius pagrindiniame lange paspaudžia “Clear Markers”, tada programėlė ištrina visus žymeklius, esamus žemėlapyje.
 
 	\textbf{Alternatyvūs scenarijai:}
 	\begin{enumerate}[itemsep=-2mm]
 		\item Jei dėl trikdžių nepavykstą ištrinti bent vieno žymeklių, ištrinti žymekliai yra grąžinami į savo vietas ir programėlė informuoja administratorių informaciniu pranešimu, kad dėl trikdžių duomenų bazėje nepavyko ištrinti žymeklių ir siūloma administratoriui pabandyti vėliau.
+		\item Administratorius pagrindiniame lange, žemėlapyje, pasirenka konkretų žymeklį, žemėlapio apačioje prie reitingo atsiranda mygtukas “Clear Marker”, administratorius jį paspaudžia ir ištrina tik tą vieną konkretų žymeklį.
 	\end{enumerate} 
+		\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.6]{img/Administratoriaus_zymeklių_trynimas}
+				\caption{Žymeklio redagavimo robustiškumo diagrama}
+				\label{img:Žymeklio radagavimo langas}
+			\end{figure}
 
 \subsubsection{Susisiekimas su administracija}
+	Šiame skyriuje aprašomas susisiekimo su administracija procesas, kuris yra schematizuotas robastiškumo diagramoje (žr. \ref{img:Susisiekimas su administracija RD} pav.). 
+	Procesą iliustruoja susisiekimo su administracija lango maketas (žr. \ref{img:Susisiekimas su administracija} pav.).
+
 	\textbf{Pagrindinis scenarijus:}\\
 	Vartotojas pagrindiniame lange paspaudžia “FAQ | Ask a question” ir patenka į D.U.K. langą. D.U.K lange vartotojas 
 	spaudžia “Ask a question” mygtuką ir patenka į klausimo uždavimo langą. Klausimo uždavimo lange vartotojas įveda 
@@ -477,12 +550,20 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 		\item Jei vartotojo įvestas el. paštas neatitinka el. pašto formato, programa informuoja vartotoją, kad įvestas el. paštas netinkamas.
 		\item Jei vartotojas klausimo lauką palieka tuščią, programa informuoja vartotoją, kad klausimo nusiųsti nepavyko, nes vartotojas klausimo lauką paliko tuščią.
 	\end{enumerate} 
+		\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.5]{img/Susisiekimas_su_administracija}
+				\caption{Susisiekimo su administracija robustiškumo diagrama}
+				\label{img:Susisiekimas su administracija RD}
+			\end{figure}
 	\begin{figure}[H]
 				\centering
 				\includegraphics[scale=1.4]{img/mockup_admincomunication}
 				\caption{Susisiekimas su administracija}
 				\label{img:Susisiekimas su administracija}
 			\end{figure}
+
+
 \subsection{Reikalavimų - užduočių atsekamumo matrica}
 	\begin{figure}[H]
 				\centering
@@ -491,19 +572,18 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 				\label{img:matrix}
 			\end{figure}
 			
-\section{Poreikiai}
+\section{Techninė analizė}
 \subsection{Išoriniai komponentai}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.7]{img/Isoriniai_komponentai}
 	\caption{Išoriniai komponentai}
-	\label{img:matrix}
+	\label{img:Išoriniai komponentai}
 \end{figure}
 
 Sistema jungiasi prie Facebook, kai norima prisijungti prie programėlės per Facebook paskyrą.
-Sistema jungiasi prie Google Maps, kad būtų matomas žemėlapis, kuriame žymimos kontrolės vietos, rodomi maršrutai ir stotelės (žr 17 pav.)
-
+Sistema jungiasi prie Google Maps, kad būtų matomas žemėlapis, kuriame žymimos kontrolės vietos, rodomi maršrutai ir stotelės (žr. \ref{img:Išoriniai komponentai} pav.).
 
 \subsection{Vidiniai komponentai}
 
@@ -511,10 +591,10 @@ Sistema jungiasi prie Google Maps, kad būtų matomas žemėlapis, kuriame žymi
 	\centering
 	\includegraphics[scale=0.7]{img/Vidiniai_komponentai}
 	\caption{Vidiniai komponentai}
-	\label{img:matrix}
+	\label{img:Vidiniai komponentai}
 \end{figure}
 
-Avoid a Ticket sistemą sudaro dvi posistemės - aplikacijos ir duomenų bazės posistemė. Duomenų bazės posistemėje yra duomenų bazė, kur saugomi sistemos duomenys, ir valdymo posistemė, kuri atlieka duomenų bazių ir kitas užklausas bei jungiasi su aplikacijos posisteme.Aplikacijos posistemėje yra vartotojo sąsaja, kuri pasitelkdama likusias posistemes (paskyros, žemėlapių, pranešimų, maršrutų, žymeklių ir reitingų) ir jų metodus parūpina informaciją vartotojui bei pateikia ją grafiniu būdu (žr 18 pav.).
+Avoid a Ticket sistemą sudaro dvi posistemės - aplikacijos ir duomenų bazės posistemė. Duomenų bazės posistemėje yra duomenų bazė, kur saugomi sistemos duomenys, ir valdymo posistemė, kuri atlieka duomenų bazių ir kitas užklausas bei jungiasi su aplikacijos posisteme.Aplikacijos posistemėje yra vartotojo sąsaja, kuri pasitelkdama likusias posistemes (paskyros, žemėlapių, pranešimų, maršrutų, žymeklių ir reitingų) ir jų metodus parūpina informaciją vartotojui bei pateikia ją grafiniu būdu (žr. \ref{img:Vidiniai komponentai} pav.).
 
 \subsection{Komponentų išsidėstymas tinkle, jų saugumas}
 
@@ -522,11 +602,11 @@ Avoid a Ticket sistemą sudaro dvi posistemės - aplikacijos ir duomenų bazės 
 	\centering
 	\includegraphics[scale=0.4]{img/Komponentu_issidestymas}
 	\caption{Komponentų išsidėstymas}
-	\label{img:matrix}
+	\label{img:išsidėstymas}
 \end{figure}
 
 Avoid a Ticket sistemoje yra du serveriai, viename jų yra duomenų bazė su duomenimis, kitame – valdymo posistemė, kuri valdo duomenų srautą sistemoje. Taip pat yra
-įrenginys su įrašyta android operacine sistema bei Avoid a Ticket aplikacija, kurioje veikia anksčiau minėtos posistemės. Įrenginio naudotojas gali būti administratorius arba klientas. Įrenginiai su pagrindiniu serveriu bei duomenų bazės ir pagrindinis serveriai tarpusavyje siejasi TCP/IP ryšiu, kurio srautą prižiūri „Firewall“ mazgas saugodamas nuo nuotolinių atakų – bandymo išgauti duomenis, kenkėjiškų programų palikimo ar kitos potencialios žalos sistemai (žr 19 pav.).
+įrenginys su įrašyta android operacine sistema bei Avoid a Ticket aplikacija, kurioje veikia anksčiau minėtos posistemės. Įrenginio naudotojas gali būti administratorius arba klientas. Įrenginiai su pagrindiniu serveriu bei duomenų bazės ir pagrindinis serveriai tarpusavyje siejasi TCP/IP ryšiu, kurio srautą prižiūri „Firewall“ mazgas saugodamas nuo nuotolinių atakų – bandymo išgauti duomenis, kenkėjiškų programų palikimo ar kitos potencialios žalos sistemai (žr. \ref{img:išsidėstymas} pav.).
 
 \subsection{Diegimas ir palaikymas}
 
@@ -548,8 +628,10 @@ versiją ir ja pakeisti senesnę.
 		\item Netiksliai aprašytas poreikis, kokiu atstumu nuo vartotojo buvimo vietos, jis gali padėti žymeklį.
 		\item Neteisingai aprašytas scenarijus “Žemėlapio redagavimas. Vartotojų balsavimas dėl žymeklio teisingumo”
 	\end{enumerate}
+\sectionnonum{Rezultatai}
+Pirmoje ir antroje laboratorinių darbų iteracijose pagal užsakovo poreikius sudaryti funkciniai ir nefunkciniai reikalavimai, nubraižyta dalykinės srities verslo esybių klasių diagrama, kuri papildyta esminiais atributais, surastais braižant robastiškumo diagramas. Pirmoje dalyje nubraižyti vartotojo sąsajos maketai. Taip pat aprašyti visi sistemos panaudojamumo scenarijai, kuriems antroje iteracijoje buvo braižomos robastiškumo diagramos. Antroje iteracijoje taip pat sukurta techninė sistemos architektūra. Visų iteracijų metu pildytas rastų klaidų ir pakeitimų sąrašas.
 \sectionnonum{Išvada}
-Šiame etape sukurta įvadinė verslo taisyklių logika leidžia toliau sėkmingai detalizuoti sistemos komponentus pereinant į žemesnius abstrakcijos lygius - sistemą galima skaidyti į atskirus verslo esybių modulius ir kiekvieną jų nagrinėti atskirai. Kadangi ICONIX proceso esmė - klaidinga kiekvienos iteracijos įeiga, todėl nereikia baimintis likusių neapibrėžtumų ir abstraktumo - visa tai bus detalizuota kitų laboratorinių darbų metu.
+Pirmoje iteracijoje sukurta įvadinė verslo taisyklių logika leidžia toliau sėkmingai detalizuoti sistemos komponentus pereinant į žemesnius abstrakcijos lygius - sistemą galima skaidyti į atskirus verslo esybių modulius ir kiekvieną jų nagrinėti atskirai. Kadangi ICONIX proceso esmė - klaidinga kiekvienos iteracijos įeiga, todėl nereikia baimintis likusių neapibrėžtumų ir abstraktumo - visa tai bus detalizuota kitų laboratorinių darbų metu. Antra iteracija ir jos esminis pagrindas - robastiškumo diagramos - leido „sugaudyti“ likusius panaudojamumo atvejų tekstų dviprasmiškumus, netikslumus ir nepastebėtas naujas esybes. Taigi, apibrėžtas koncepcinis sistemos modelis, kuris yra tarpinė sritis tarp dalykinės srities analizės ir tikslios techninės architektūros.
 
 \sectionnonum{Literatūros sąrašas}
 \begin{enumerate}[label={[\arabic*]};itemsep=-2mm]
