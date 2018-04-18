@@ -490,6 +490,50 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 				\caption{Užduočių atsekamumo matrica}
 				\label{img:matrix}
 			\end{figure}
+			
+\section{Poreikiai}
+\subsection{Išoriniai komponentai}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{img/Isoriniai_komponentai}
+	\caption{Išoriniai komponentai}
+	\label{img:matrix}
+\end{figure}
+
+Sistema jungiasi prie Facebook, kai norima prisijungti prie programėlės per Facebook paskyrą.
+Sistema jungiasi prie Google Maps, kad būtų matomas žemėlapis, kuriame žymimos kontrolės vietos, rodomi maršrutai ir stotelės (žr 17 pav.)
+
+
+\subsection{Vidiniai komponentai}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{img/Vidiniai_komponentai}
+	\caption{Vidiniai komponentai}
+	\label{img:matrix}
+\end{figure}
+
+Avoid a Ticket sistemą sudaro dvi posistemės - aplikacijos ir duomenų bazės posistemė. Duomenų bazės posistemėje yra duomenų bazė, kur saugomi sistemos duomenys, ir valdymo posistemė, kuri atlieka duomenų bazių ir kitas užklausas bei jungiasi su aplikacijos posisteme.Aplikacijos posistemėje yra vartotojo sąsaja, kuri pasitelkdama likusias posistemes (paskyros, žemėlapių, pranešimų, maršrutų, žymeklių ir reitingų) ir jų metodus parūpina informaciją vartotojui bei pateikia ją grafiniu būdu (žr 18 pav.).
+
+\subsection{Komponentų išsidėstymas tinkle, jų saugumas}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{img/Komponentu_issidestymas}
+	\caption{Komponentų išsidėstymas}
+	\label{img:matrix}
+\end{figure}
+
+Avoid a Ticket sistemoje yra du serveriai, viename jų yra duomenų bazė su duomenimis, kitame – valdymo posistemė, kuri valdo duomenų srautą sistemoje. Taip pat yra
+įrenginys su įrašyta android operacine sistema bei Avoid a Ticket aplikacija, kurioje veikia anksčiau minėtos posistemės.Įrenginio naudotojas gali būti administratorius arba klientas. Įrenginiai su pagrindiniu serveriu bei duomenų bazės ir pagrindinis serveriai tarpusavyje siejasi TCP/IP ryšiu, kurio srautą prižiūri „Firewall“ mazgas saugodamas nuo nuotolinių atakų – bandymo išgauti duomenis, kenkėjiškų programų palikimo ar kitos potencialios žalos sistemai (žr 19 pav.).
+
+\subsection{Diegimas ir palaikymas}
+
+Aplikacija talpinama Google „Play Store“ sistemoje, iš kurios kiekvienas asmuo su Android operacinę sistemą palaikančiu įrenginiu gali ją atsisiųsti. Aplikacijos atnaujinimai vyksta taip pat per Google „Play Store“. Vartotojai, pirmą kartą diegiantys programėlę, siunčiasi naujausią tuo metu prieinamą versiją, o atnaujinimo atveju turi galimybę atsisiųsti naujesnę
+versiją ir ja pakeisti senesnę.
+
+
 \section{Rastų klaidų sąrašas}
 	\begin{enumerate}[itemsep=-2mm]
 		\item Struktūriniame esybių modelyje nebuvo Maršruto esybės.
