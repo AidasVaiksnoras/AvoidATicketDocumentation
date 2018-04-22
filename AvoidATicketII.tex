@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage{bm}
 \usepackage{caption}
+\usepackage{biblatex}
 \usepackage{color}
 \usepackage{float}
 \usepackage{graphicx}
@@ -65,6 +66,10 @@ Tikslas ištirti rinką galimam programėlės vystymui. Taip pat programėlės p
    Tadas Žaliauskas & 20\% \\
    Matas Šilinskas & 20\% \\
 \end{tabular}
+\\
+\textbf{Naudojama informacija}\\
+Šis dokumentas rengiamas pagal PSI II kurso laboratorinių darbų reikalavimus, išdėstytus~\ref{petrauskas} šaltinyje. Visas kurso turinys susijęs su ICONIX programų kūrimo proceso metodologija,
+kuri detaliai aprašoma~\ref{iconix} knygoje. UML specifika aprašoma~\ref{uml} ir~\ref{omguml} resursuose.
 
 \section{Poreikiai}
 \begin{enumerate}[itemsep=-2mm]
@@ -87,7 +92,7 @@ Tikslas ištirti rinką galimam programėlės vystymui. Taip pat programėlės p
 \end{enumerate} 
 
 \section{Reikalavimai}
-Šiame skyriuje pateikiami sistemos funkciniai ir nefunkciniai reikalavimai.
+Šiame skyriuje pateikiami sistemos funkciniai ir nefunkciniai reikalavimai, sudaryti pagal užsakovo nurodytus poreikius.
 \subsection{Funkciniai reikalavimai }
 Šiame skyriuje pateikiami sistemos funkciniai reikalavimai, t.y. pagrindinės sistemos atliekamos funkcijos, konkretūs jų aprašymai.
 
@@ -148,6 +153,7 @@ FR\rownumberfr & Išjungus programėlę, vartotojas liekas prisijungęs.\newline
 \newcommand\rownumber{\stepcounter{nfrcount}\arabic{nfrcount}}
 
 \subsubsection{OS reikalavimai}
+Pateikiami reikalavimai, susiję su Operacinės sistemos charakteristikomis
 \begin{longtable}{ | >{\centering}m{2cm} | m{10cm} | >{\centering}m{2.5cm} | } \caption{Nefunkciniai OS reikalavimai} \endhead \hline
 \multicolumn{3}{ |l| }{\textbf{OS reikalavimai:}} \tabularnewline \hline
 \textbf{Numeris} & \centering{\textbf{Reikalavimas}} & \textbf{Svarba} \tabularnewline \hline
@@ -159,6 +165,7 @@ NFR\rownumber & Išmanusis įrenginys turi turėti prieigą prie interneto & Bū
 \end{longtable}
 
 \subsubsection{Saveikos su  kitomis programomis reikalavimai}
+Reikalavimai, susiję su išorinėmis sistemomis ir įrenginiais
 \begin{longtable}{ | >{\centering}m{2cm} | m{10cm} | >{\centering}m{2.5cm} | } \caption{Nefunkciniai saveikos su  kitomis programomis reikalavimai} \endhead \hline
 \multicolumn{3}{ |l| }{\textbf{Saveikos su  kitomis programomis reikalavimai:}} \tabularnewline \hline
 \textbf{Numeris} & \centering{\textbf{Reikalavimas}} & \textbf{Svarba} \tabularnewline \hline
@@ -169,6 +176,7 @@ NFR\rownumber & Google api žaidimo vietos nustatymui. & Būtina\tabularnewline 
 \end{longtable}
 
 \subsubsection{Programavimo aplinkos reikalavimai}
+Pateikiami reikalavimai techniniam programavimo procesui
 \begin{longtable}{ | >{\centering}m{2cm} | m{10cm} | >{\centering}m{2.5cm} | } \caption{Nefunkciniai programavimo aplinkos reikalavimai} \endhead \hline
 \multicolumn{3}{ |l| }{\textbf{Programavimo aplinkos reikalavimai:}} \tabularnewline \hline
 \textbf{Numeris} & \centering{\textbf{Reikalavimas}} & \textbf{Svarba} \tabularnewline \hline
@@ -177,6 +185,7 @@ NFR\rownumber & Kodo versijavimui ir dalinimuisi naudojama Github repozitorija. 
 \end{longtable}
 
 \subsubsection{Tikslumo reikalavimai}
+Įvairūs reikalavimai, susiję su reikšmių tikslumu
 \begin{longtable}{ | >{\centering}m{2cm} | m{10cm} | >{\centering}m{2.5cm} | } \caption{Nefunkciniai tikslumo reikalavimai duomenų saugojimui} \endhead \hline
 \multicolumn{3}{ |l| }{\textbf{Tikslumo reikalavimai duomenų saugojimui:}} \tabularnewline \hline
 \textbf{Numeris} & \centering{\textbf{Reikalavimas}} & \textbf{Svarba} \tabularnewline \hline
@@ -194,6 +203,7 @@ NFR\rownumber & Programėlėje esantis tekstas rašomas anglų kalba. \newline \
 \end{longtable}
 
 \subsubsection{Aptarnavimo ir priežiūros reikalavimai}
+Sistemos priežiūros reikalavimų charakteristikos
 \begin{longtable}{ | >{\centering}m{2cm} | m{10cm} | >{\centering}m{2.5cm} | } \caption{Nefunkciniai aptarnavimo ir priežiūros reikalavimai} \endhead \hline
 \multicolumn{3}{ |l| }{\textbf{Aptarnavimo ir priežiūros reikalavimai:}} \tabularnewline \hline
 \textbf{Numeris} & \centering{\textbf{Reikalavimas}} & \textbf{Svarba} \tabularnewline \hline
@@ -212,7 +222,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 \end{longtable}
 
 \section{Statinė programų sistemos struktūra}
-Šiame skyriuje pateikiama statinė programų sistemos architektūra.	
+Šiame skyriuje pateikiama statinė programų sistemos architektūra, nurodanti pagrindines esybes, jų charakteristikas ir atsakomybes, taip pat - ryšius tarp šių esybių.	
 \subsection{Esybių diagrama}
 Šiame skyriuje pateikiama esybių diagrama, kuria vaizduojami duomenys, kurie yra saugomi ir apdorojami informacinėje sistemoje (žr. \ref{img:Esybių diagrama} pav.).
 	\begin{figure}[H]
@@ -231,6 +241,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 			\end{figure}
 
 \subsection{Žodynas}
+Pateikiamos sistemoje naudojamos esybės, taip pat - jų trumpi aprašymai.
 				\begin{enumerate}[label=E\arabic*,itemsep=-2mm]
 					\item \textit{Vartotojas} - klientas, prisiregistravęs prie aplikacijos.
 					\item \textit{Neprisijungęs vartotojas} - vartotojas, kuris nėra atlikęs prisijungimo procedūros programėlėje ir neturi galiojančios prisijungimo sesijos.
@@ -251,6 +262,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 					\item \textit{Facebook} - socialinis tinklas “Facebook”.
 				\end{enumerate}
 \subsection{Vartotojo Sąsajos Langai}
+Išvardinti visi esminiai sistemos grafinės sąsajos elementai
 				\begin{enumerate}[label=VSL\arabic*,itemsep=-2mm]
 					\item \textit{Prisijungimo langas} - programėlės langas, į kurį patenka naujas vartotojas, ją parsisiuntęs. Šiame lange taip pat yra nuoroda į registracijos langą ir prisijungimą per Facebook API.
 					\item \textit{Registracijos langas} - programėlės langas, kuriame vartotojas suveda savo registracijos duomenis: vardą, pavardę, prisijungimo vardą, slaptažodį, el. paštą ir užbaigia registraciją.
@@ -265,7 +277,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 				\end{enumerate}
 \subsection{Užduotys}
 
-Šiame skyriuje pateikiamos užduotys, kurias gali atlikti vartotojai ir administratoriai (žr. \ref{img:uzduotys} pav.).
+Šiame skyriuje grafine diagrama pateikiamos užduotys, kurias gali atlikti vartotojai ir administratoriai (žr. \ref{img:uzduotys} pav.).
 	\begin{figure}[H]
 				\centering
 				\includegraphics[scale=0.5]{img/uzduotys}
@@ -275,7 +287,7 @@ NFR\rownumber & Vartotojas gali padėti ne daugiau 10 žymeklių per dieną. & B
 
 \subsection{Užduočių aprašai}
 \label{sec:Užduočių aprašai}
-Skyriuje \ref{sec:Užduočių aprašai} pateikti užduočių aprašai.
+Skyriuje \ref{sec:Užduočių aprašai} pateikti užduočių aprašai kartu su pagrindiniais, alternatyviais scenarijais ir šabloniniais grafikos elementais.
 \subsubsection{UC1 Registracija}
 	Šiame skyriuje aprašomas vartotojo registracijos procesas, kuris yra schematizuotas robastiškumo diagramoje (žr. \ref{img:Registracijos robustiškumo diagrama} pav.). 
 	Procesą iliustruoja registracijos lango maketas (žr. \ref{img:registracija} pav.).
@@ -579,10 +591,10 @@ Skyriuje \ref{sec:Užduočių aprašai} pateikti užduočių aprašai.
 				\label{img:Užduočių matrica}
 			\end{figure}
 			
-\section{Techninė analizė}
-Šiame skyriuje pateikiama sistemos techninė analizė.
+\section{Techninė architektūra}
+Šiame skyriuje pateikiama sistemos techninė architektūra, parodanti tikrąjį kuriamos sistemos analizės planą. Tai - koncepcinio modelio detalesnė realizacija.
 \subsection{Išoriniai komponentai}
-
+Grafiškai pavaizduoti visi išoriniai komponentai, bendraujantys su sistema
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.7]{img/Isoriniai_komponentai}
@@ -594,7 +606,7 @@ Sistema jungiasi prie Facebook, kai norima prisijungti prie programėlės per Fa
 Sistema jungiasi prie Google Maps, kad būtų matomas žemėlapis, kuriame žymimos kontrolės vietos, rodomi maršrutai ir stotelės (žr. \ref{img:Išoriniai komponentai} pav.).
 
 \subsection{Vidiniai komponentai}
-
+Sistemos dekompozicija pagal vidinius komponentus, jų detalesnio abstrakcijos lygmens sandara.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.7]{img/Vidiniai_komponentai}
@@ -605,6 +617,7 @@ Sistema jungiasi prie Google Maps, kad būtų matomas žemėlapis, kuriame žymi
 Avoid a Ticket sistemą sudaro dvi posistemės - aplikacijos ir duomenų bazės posistemė. Duomenų bazės posistemėje yra duomenų bazė, kur saugomi sistemos duomenys, ir valdymo posistemė, kuri atlieka duomenų bazių ir kitas užklausas bei jungiasi su aplikacijos posisteme.Aplikacijos posistemėje yra vartotojo sąsaja, kuri pasitelkdama likusias posistemes (paskyros, žemėlapių, pranešimų, maršrutų, žymeklių ir reitingų) ir jų metodus parūpina informaciją vartotojui bei pateikia ją grafiniu būdu (žr. \ref{img:Vidiniai komponentai} pav.).
 
 \subsection{Komponentų išsidėstymas tinkle, jų saugumas}
+Skyrelyje pateikiamas sistemos fizinių komponentų išdėstymas tinkle, visa sistemos topologija.
 
 \begin{figure}[H]
 	\centering
@@ -622,7 +635,8 @@ Aplikacija talpinama Google „Play Store“ sistemoje, iš kurios kiekvienas as
 versiją ir ja pakeisti senesnę.
 
 
-\section{Rastų klaidų sąrašas}
+\sectionnonum{Rastų klaidų sąrašas}
+Šiame skyriuje dokumentuojamos visos laboratorinių darbų metu užfiksuotos klaidos
 	\begin{enumerate}[itemsep=-2mm]
 		\item Struktūriniame esybių modelyje nebuvo Maršruto esybės.
 		\item Struktūriniame esybių modelyje Filtro esybė buvo agregacijos ryšiu sujungta su žymekliu.
@@ -635,6 +649,15 @@ versiją ir ja pakeisti senesnę.
 		\item Nebuvo funkcinio reikalavimo vartotojo galimybei filtruoti matomus žymeklius pagal pasirinktą maršrutą.
 		\item Netiksliai aprašytas poreikis, kokiu atstumu nuo vartotojo buvimo vietos, jis gali padėti žymeklį.
 		\item Neteisingai aprašytas scenarijus “Žemėlapio redagavimas. Vartotojų balsavimas dėl žymeklio teisingumo”
+		\item Profilio duomenų redagavimo UC3 panaudojamumo atvejo teksto korekcija - pridėtas naujas alternatyvus scenarijus: nesutampantys slaptažodžiai. 2018-04-17
+		\item UC4 panaudojamumo atvejo teksto korekcija - pridėtas naujas alternatyvus scenarijus: tuščias komentaro laukas. 2018-04-17
+		\item UC7 teksto patikslinimas: papildoma informacija apie GPS įrenginio dialogo langą. 2018-04-17
+		\item UC10 teksto patikslinimas: pridėtas papildomas alternatyvus scenarijus, kai administratorius nori pašalinti tik vieną žymeklį. 2018-04-17
+		\item Iš vienos esybės Komentaras sukurtos dvi - Kūrėjo komentaras ir Vartotojo komentaras esybės, reiškiančios du skirtingus sistemos funkcionalumus. 2018-04-17
+		\item Pridėti aprašymai dokumento antraštėms. 2018-04-22
+		\item Sunumeruotos visos verslo esybės, vartotojo sąsajos langai, panaudojamumo atvejų tekstai. 2018-04-22
+		\item Įvade pridėtas naudojamų literatūros sąrašo resursų paminėjimas 2018-04-22
+
 	\end{enumerate}
 \sectionnonum{Rezultatai}
 Pirmoje ir antroje laboratorinių darbų iteracijose pagal užsakovo poreikius sudaryti funkciniai ir nefunkciniai reikalavimai, nubraižyta dalykinės srities verslo esybių klasių diagrama, kuri papildyta esminiais atributais, surastais braižant robastiškumo diagramas. Pirmoje dalyje nubraižyti vartotojo sąsajos maketai. Taip pat aprašyti visi sistemos panaudojamumo scenarijai, kuriems antroje iteracijoje buvo braižomos robastiškumo diagramos. Antroje iteracijoje taip pat sukurta techninė sistemos architektūra. Visų iteracijų metu pildytas rastų klaidų ir pakeitimų sąrašas.
@@ -642,11 +665,16 @@ Pirmoje ir antroje laboratorinių darbų iteracijose pagal užsakovo poreikius s
 Pirmoje iteracijoje sukurta įvadinė verslo taisyklių logika leidžia toliau sėkmingai detalizuoti sistemos komponentus pereinant į žemesnius abstrakcijos lygius - sistemą galima skaidyti į atskirus verslo esybių modulius ir kiekvieną jų nagrinėti atskirai. Kadangi ICONIX proceso esmė - klaidinga kiekvienos iteracijos įeiga, todėl nereikia baimintis likusių neapibrėžtumų ir abstraktumo - visa tai bus detalizuota kitų laboratorinių darbų metu. Antra iteracija ir jos esminis pagrindas - robastiškumo diagramos - leido „sugaudyti“ likusius panaudojamumo atvejų tekstų dviprasmiškumus, netikslumus ir nepastebėtas naujas esybes. Taigi, apibrėžtas koncepcinis sistemos modelis, kuris yra tarpinė sritis tarp dalykinės srities analizės ir tikslios techninės architektūros.
 
 \sectionnonum{Literatūros sąrašas}
+
 \begin{enumerate}[label={[\arabic*]},itemsep=-2mm]
 	\item Doc. dr. K. Petrausko Programų Sistemų Inžinerijos kurso konspektai
+	\label{petrauskas}
 	\item Doug Rosenberg and Matt Stephens - „Use Case Driven Object Modeling with UML Theory and Practice“
+	\label{iconix}
 	\item UML dokumentacija \url{https://www.tutorialspoint.com/uml/uml_2_overview.htm}
+	\label{uml}
 	\item OMG UML v.2.5 Dokumentacija diagramoms, žymėjimui
+	\label{omguml}
 \end{enumerate}
 
 \end{document}
